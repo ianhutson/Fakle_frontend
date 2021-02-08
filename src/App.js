@@ -1,17 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Title from './title';
-import Header from "./header";
-import Footer from "./footer";
+import Header from './components/header'
+import Footer from './components/footer'
+import SelectPlayersNumber from './components/select_players_number'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Title />
-      <Footer />
+    <div >
+    < Header />
+    <SelectPlayersNumber />
+    < Footer />
     </div>
-  );
-}
+   );
+  }
 
 export default App;
