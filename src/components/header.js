@@ -8,13 +8,6 @@ const Header = () => {
             <img src={Logo} className="logo"></img>
         <nav className='nav'>
         <div className='nav__card'>
-            <NavLink className='nav__link' to="/players">
-                <div className='nav__content'>
-                   Players
-                </div>
-            </NavLink>
-        </div>
-        <div className='nav__card'>
             <NavLink className='nav__link' to="/rules">
                 <div className='nav__content'>
                     Rules
@@ -28,9 +21,15 @@ const Header = () => {
                 </div>
             </NavLink>
         </div>
+        <div className='nav__card'>
+            <NavLink className='nav__link' to="/players">
+                <div className='nav__content'>
+                   Edit Players
+                </div>
+            </NavLink>
+        </div>
         </nav>
         </div>
-
   )
 }
 

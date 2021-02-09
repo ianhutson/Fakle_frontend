@@ -16,12 +16,17 @@ class SelectPlayersNames extends React.Component {
 
   render() {
     return (
-      <form>
+      <div className="select_players_names_container">
+      <form><br></br>
+      <h3>Enter player names:</h3>
         <input type="text" onChange={event => this.handleNameChange(event)} value={this.state.p1} />
+        <br></br><br></br>
         <input type="text" onChange={event => this.handleNameChange(event)} value={this.state.p2} />
+        <br></br><br></br>
         <input type="text" onChange={event => this.handleNameChange(event)} value={this.state.p3} />
+        <br></br><br></br>
         <input type="text" onChange={event => this.handleNameChange(event)} value={this.state.p4} />
-      </form>
+      </form></div>
     )
   }
 }

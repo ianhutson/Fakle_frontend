@@ -1,4 +1,6 @@
 body {
+  color: white;
+  background-color: black;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -6,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+ 
 }
 
 code {
@@ -14,7 +17,7 @@ code {
 }
 
 .footer {
-  height: 10px;
+  height: 15px;
   position: fixed;
   display: grid; 
   grid-template-rows: repeat(2, 1fr);
@@ -25,7 +28,7 @@ code {
   font-size: 14px;
   background-color: rgb(192, 45, 26);
   color: white;
-  padding: 10px
+  padding: 7px
 }
 
 .footer__links {
@@ -36,8 +39,23 @@ code {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center; 
-  text-align: center; }
+  text-align: center;
+  text-decoration: none;
+}
 
+.footer__links a:link{
+  color:rgb(46, 236, 46);
+  text-decoration:double;
+}
+
+.footer__links a:visited{
+  color:rgb(173, 132, 240); 
+  text-decoration: none;
+}
+
+.footer__info{
+  color:white
+}
 
 .header {
   box-sizing: border-box;
@@ -48,14 +66,28 @@ code {
   color: #fff;
   height:60px;
   display: inline-block;
-  float: left;
 }
 
 .logo {
-width:10%;
-border: 5%;
+width:8%;
+padding-top: .25%;
 }
+
+h1{
+  padding: 0;
+  text-align: center;
+  margin: auto;
+}
+
+h3 {
+  font-size: 50 px;
+  text-decoration: none;
+  text-emphasis: none;
+  margin: auto;
+}
+
 h5 {font-size: 30px;
+  margin-top: 5%;
   text-align: center;
   display: inline-block;
   margin-top: 0;
@@ -68,15 +100,71 @@ h5 {font-size: 30px;
   margin: 10px;
   text-align: center; }
 
+.game_container{
+  width: 100%;
+ display: flex;
+}
+
+.board_container{
+  padding: 5px;
+  height: 800px;
+  width: 650px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: gold;
+  background-color: green;
+  text-align: center;
+  margin-top: 3%;
+  margin-left: 50%;
+  float:left;
+}
+
+.score_container{
+  padding: 10px;
+  height: 600px;
+  width: 400px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: gold;
+  background-color: green;
+  text-align: center;
+  margin-top: 5%;
+  margin-right: -120%;
+  float: right;
+}
+
+.rolling_board{
+  padding: 15px;
+  text-align: center;
+  margin: auto;
+  height: 250px;
+  width: 500px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+}
+
+.player_keep{
+  padding: 15px;
+  text-align: center;
+  margin: auto;
+  height: 250px;
+  width: 500px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+}
+
 .nav {
   height: 10px;
   width:100%;
   display: block;
   justify-content: center;
   align-content: center;
-  margin-top: -5rem; }
+  margin-top: -2.25%;}
     .nav__card {width: 10%;
       display: inline-block;  
+      background-color: green;
       float: left;
     }
     .nav__card:hover {
@@ -91,9 +179,10 @@ h5 {font-size: 30px;
       display: block;
       grid-template-rows: 10 15rem;
       grid-template-columns: repeat(3, 1fr);
-      border-radius: 2.25rem;
-      color:  rgb(255, 255, 255);
-      border: solid 5px rgb(255, 255, 255);
+      color: white;
+      border-style: solid;
+      border-width: 5px;
+      border-color: gold;
       box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.25); 
       width: 95%; 
       align-self: center;}
@@ -103,4 +192,41 @@ h5 {font-size: 30px;
       align-self: center; }
     .nav__text {
       font-size: 1.23rem; }
+    button {
+      background-color: red;
+      width: 10%;
+    }
 
+    .buttons_container{
+      width:100%;
+      text-align: center;
+    }
+
+    .game_buttons:hover {
+      transform: translateY(-.5rem) scale(1.03);
+      box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.35); }
+    .game_buttons:active {
+      box-shadow: 0 1rem 1rem rgba(14, 17, 17, 0.15);
+      transform: translateY(0); }
+    .game_buttons {
+      display: inline-block;
+      font-size: 20px;
+      margin: 1%;
+      text-decoration: none;
+      grid-template-rows: 10 15rem;
+      grid-template-columns: repeat(3, 1fr);
+      color: white;
+      border-style: solid;
+      border-width: 5px;
+      border-color: gold;
+      box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.25); 
+      width: 25%; 
+      align-self: center;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+ 
+ 

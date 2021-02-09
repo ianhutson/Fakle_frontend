@@ -1,16 +1,14 @@
 import React from 'react'
+import Board from './board'
+import Score from './score'
 
 function Game() {
     return (
-        <div>
-            {/* Current player */}
-            {/* Roll Board */}
-            {/* Player Board */}
-            {/* Board Value */}
-            {/* Roll - Keep - Pass */}
-            {/* Scoreboard */}
-            {/* Current Turn*/}
-        </div>
+        <div className="game_container">
+            <br></br>
+            <Board />
+            <Score />
+    </div>
     )
 }
 

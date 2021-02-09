@@ -9,9 +9,7 @@ const Home = () => {
     return (
         <div className='home'>
             <Header />
-            <SelectPlayersNumber/>
-            <SelectPlayersNames/>
-            <Game/> 
+            <Game />
             <Footer />
         </div>
     )

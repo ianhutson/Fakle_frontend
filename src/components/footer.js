@@ -6,7 +6,7 @@ const Footer = () => {
             <div className='footer__links'>
                 <a href='mailto: ih00209@georgiasouthern.edu'>Contact
                 </a>
-                <a>A project for Flatiron School ©2021 - Ian Hutson</a>
+                <a className='footer__info' >A project for Flatiron School ©2021 - Ian Hutson</a>
                 <a href='https://github.com/ianhutson/fuggle_frontend'>GitHub
                 </a>
             </div>
