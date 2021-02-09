@@ -1,13 +1,32 @@
-import Header from './components/header'
-import Footer from './components/footer'
-import SelectPlayersNumber from './components/select_players_number'
+import React from 'react'
+import Home from './containers/home'
+import Players from './containers/players'
+import Rules from './containers/rules'
+import Leaderboard from './containers/leaderboard'
+import { BrowserRouter as Router, Route, Switch, useHistory} from 'react-router-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 function App() {
   return (
-    <div >
-    < Header />
-    <SelectPlayersNumber />
-    < Footer />
+    <div className='App'>
+    <Router>
+    <Route render={({location}) => (
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          timeout={3000}
+          classNames='fade'
+         >
+        <Switch location={location}>
+          <Route exact path="/players" component={Players} />
+          <Route exact path="/rules" component={Rules}/>
+          <Route exact path="/leaderboard" component={Leaderboard} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+        </CSSTransition>
+        </TransitionGroup>
+    )}/>
+    </Router>
     </div>
    );
   }

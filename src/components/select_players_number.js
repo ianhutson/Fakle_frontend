@@ -17,7 +17,6 @@ class SelectPlayersNumber extends React.Component {
        <h1>How many players?</h1>
        <br></br>
       <form>
-        <input className="num_players_button" type="button" onClick={event => this.handleSelection(event)} value={1} />
         <input className="num_players_button" type="button" onClick={event => this.handleSelection(event)} value={2} />
         <input className="num_players_button" type="button" onClick={event => this.handleSelection(event)} value={3} />
         <input className="num_players_button" type="button" onClick={event => this.handleSelection(event)} value={4} />
