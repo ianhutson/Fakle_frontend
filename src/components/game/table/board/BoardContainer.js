@@ -1,8 +1,8 @@
 import React from 'react'
-import PlayerKeep from './Player_keep'
-import RollBoard from './Roll_board'
-import GameButtons from './Game_buttons'
-import Die from './RollDice'
+import PlayerKeep from './PlayerKeep'
+import RollBoard from './RollBoard'
+import ButtonsContainer from './buttons/ButtonsContainer'
+
 
 function Board() {
     return (
@@ -11,10 +11,9 @@ function Board() {
             <h1>(Current Player)'s Turn!</h1>
             <h3>Turn (Current Turn #)</h3>
             <RollBoard/>
-            
             <br></br>
             <PlayerKeep/>
-            <GameButtons />
+            <ButtonsContainer />
         </div>
     </div>
     )

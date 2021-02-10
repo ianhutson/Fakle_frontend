@@ -3,8 +3,9 @@ import Home from './containers/Home'
 import Players from './containers/Players'
 import Rules from './containers/Rules'
 import Leaderboard from './containers/Leaderboard'
-import { BrowserRouter as Router, Route, Switch, useHistory} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+
 
 function App() {
   return (

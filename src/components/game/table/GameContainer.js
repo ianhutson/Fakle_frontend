@@ -1,6 +1,6 @@
 import React from 'react'
-import Board from './Board'
-import Score from './Score'
+import Board from './board/BoardContainer'
+import Score from '../scoreboard/Score'
 
 function Game_container() {
     return (
