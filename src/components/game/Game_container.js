@@ -1,8 +1,8 @@
 import React from 'react'
-import Board from './board'
-import Score from './score'
+import Board from './Board'
+import Score from './Score'
 
-function Game() {
+function Game_container() {
     return (
         <div className="game_container">
             <br></br>
@@ -12,4 +12,4 @@ function Game() {
     )
 }
 
-export default Game
+export default Game_container

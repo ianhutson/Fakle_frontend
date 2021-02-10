@@ -69,8 +69,9 @@ code {
 }
 
 .logo {
-width:8%;
-padding-top: .25%;
+  margin-top:.225%;
+  height: 8%;
+  width:8%;
 }
 
 h1{

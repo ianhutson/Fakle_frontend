@@ -1,8 +1,8 @@
 import React from 'react'
-import Home from './containers/home'
-import Players from './containers/players'
-import Rules from './containers/rules'
-import Leaderboard from './containers/leaderboard'
+import Home from './containers/Home'
+import Players from './containers/Players'
+import Rules from './containers/Rules'
+import Leaderboard from './containers/Leaderboard'
 import { BrowserRouter as Router, Route, Switch, useHistory} from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 

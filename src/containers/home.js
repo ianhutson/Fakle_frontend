@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Game from '../components/game'
-import SelectPlayersNumber from '../components/select_players_number'
-import SelectPlayersNames from '../components/select_players_names'
+import Header from '../components/structural/Header'
+import Footer from '../components/structural/Footer'
+import Game from '../components/game/Game_container'
+import SelectPlayersNumber from '../components/game/select_players_number'
+import SelectPlayersNames from '../components/game/select_players_names'
 
 const Home = () => {
     return (

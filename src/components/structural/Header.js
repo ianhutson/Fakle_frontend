@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from '../images/fuggle_logo.png'
+import Logo from './Logo'
 import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
       <div className='header'>
-            <img src={Logo} className="logo"></img>
+            <Logo/>
         <nav className='nav'>
         <div className='nav__card'>
             <NavLink className='nav__link' to="/rules">

@@ -1,7 +1,7 @@
 import React from 'react'
-import PlayerKeep from './player_keep'
-import RollBoard from './roll_board'
-import GameButtons from './game_buttons'
+import PlayerKeep from './Player_keep'
+import RollBoard from './Roll_board'
+import GameButtons from './Game_buttons'
 
 function Board() {
     return (
