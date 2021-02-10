@@ -1,22 +1,23 @@
+@font-face {
+  font-family: 'Casino';
+  src: local('Casino'), url('./assets/CasinoFlat-Italic.ttf') format('truetype');
+}
+
 body {
-  color: white;
+  color: rgba(255, 255, 255, 0.842);
   background-color: black;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Casino';
   text-align: center;
  
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Casino';
 }
 
 .footer {
+  
   height: 15px;
   position: fixed;
   display: grid; 
@@ -28,7 +29,8 @@ code {
   font-size: 14px;
   background-color: rgb(192, 45, 26);
   color: white;
-  padding: 7px
+  padding: 7px;
+
 }
 
 .footer__links {
@@ -67,6 +69,7 @@ code {
   height:60px;
   display: inline-block;
 }
+
 
 .logo {
   margin-top:.225%;
@@ -118,6 +121,7 @@ h5 {font-size: 30px;
   margin-top: 3%;
   margin-left: 50%;
   float:left;
+  border-radius: 25px;
 }
 
 .score_container{
@@ -126,12 +130,11 @@ h5 {font-size: 30px;
   width: 400px;
   border-style: solid;
   border-width: 10px;
-  border-color: gold;
-  background-color: green;
-  text-align: center;
-  margin-top: 5%;
-  margin-right: -120%;
-  float: right;
+  border-color: red;
+  background-color: rgba(255, 255, 255, 0.89);
+  color: black;
+  margin-top: 3%;
+  margin-left: 30%;
 }
 
 .rolling_board{
@@ -214,6 +217,7 @@ h5 {font-size: 30px;
       font-size: 20px;
       margin: 1%;
       text-decoration: none;
+      font-family: casino;
       grid-template-rows: 10 15rem;
       grid-template-columns: repeat(3, 1fr);
       color: white;
@@ -228,6 +232,89 @@ h5 {font-size: 30px;
     table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
+      text-align: center;
+      align-self: center;
+      margin:auto;
+      padding-left: 10px;
+      padding-right: 10px;
     }
+    
  
- 
+    .RollDice{ 
+      display: flex; 
+      flex-flow: column nowrap; 
+      min-height: 100vh; 
+    } 
+      
+    /* Shows each dice in one row */
+    .RollDice-container{ 
+      display: flex; 
+      justify-content: center; 
+      align-content: center; 
+    } 
+    /* Stylling rolldice button */
+    .RollDice button{ 
+      width:15em; 
+      padding:1.5em; 
+      border: 0px; 
+      border-radius: 10px; 
+      color:white; 
+      background-color:black; 
+      margin-top: 3em; 
+      align-self: center; 
+    } 
+      
+    /* Setting hover effect on button */
+    .RollDice button:hover{ 
+      cursor: pointer; 
+    } 
+      
+    .RollDice-rolling{ 
+      border: 0px; 
+      border-radius: 10px; 
+      background-color:darkslateblue !important; 
+      opacity:0.7
+    } 
+    /* Styling each Die */
+.Die{ 
+  font-size:10em; 
+  padding:0.25em; 
+  color:red; 
+} 
+  
+/* Applying Animation */
+.Die-shaking{ 
+  animation-name:wobble; 
+  animation-duration: 1s; 
+} 
+  
+/* Setting Animation effect to the  
+   dice using css keyframe */
+@keyframes wobble { 
+  from { 
+    transform: translate3d(0, 0, 0); 
+  } 
+  15% { 
+    transform: translate3d(-25%, 0, 0)  
+               rotate3d(0, 0, 1, -5deg); 
+  } 
+  30% { 
+    transform: translate3d(20%, 0, 0)  
+               rotate3d(0, 0, 1, 3deg); 
+  } 
+  45% { 
+    transform: translate3d(-15%, 0, 0) 
+               rotate3d(0, 0, 1, -3deg); 
+  } 
+  60% { 
+    transform: translate3d(10%, 0, 0)  
+               rotate3d(0, 0, 1, 2deg); 
+  } 
+  75% { 
+    transform: translate3d(-5%, 0, 0)  
+               rotate3d(0, 0, 1, -1deg); 
+  } 
+  to { 
+    transform: translate3d(0, 0, 0); 
+  } 
+}

@@ -1,10 +1,11 @@
 import React from 'react'
+import RollDice from './RollDice'
 
 function GameButtons() {
     return (
         <div className="buttons_container">
             <br></br>
-            <button className="game_buttons">Roll</button>
+            <RollDice/>
             <button className="game_buttons">Keep Selected</button>
             <button className="game_buttons">End Turn</button>
             
