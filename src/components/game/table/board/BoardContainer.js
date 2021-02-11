@@ -8,8 +8,8 @@ function Board() {
     return (
         <div>
             <div className="board_container">  
-            <h1>(Current Player)'s Turn!</h1>
-            <h3>Turn (Current Turn #)</h3>
+            <h2>Player 1's Turn!</h2>
+            <h6>TURN 1</h6>
             <RollBoard/>
             <br></br>
             <PlayerKeep/>

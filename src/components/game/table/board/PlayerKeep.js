@@ -1,13 +1,15 @@
 import React from 'react'
 import Dice from '../DiceContainer'
-
+import Title from './KeepTitle'
+import Value from './ValueTitle'
 function PlayerKeep() {
     return (
         <div>
              <div className="player_keep">
-                <h5>Player Keep</h5>
+                <Title/>
                 <Dice/>
-                <h3>Keep Value - ##</h3>
+                <Value/>
+                <p>150</p>
             </div>
         </div>
     )

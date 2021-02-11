@@ -3,13 +3,30 @@
   src: local('Casino'), url('./assets/CasinoFlat.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'digital';
+  src: local('digital'), url('./assets/CursedTimerUlil-Aznm.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'lemon';
+  src: local('lemon'), url('./assets/LEMONMILK-BoldItalic.otf') format('opentype');
+}
+
 body {
   color: rgba(255, 255, 255, 0.842);
   background-color: black;
   margin: 0;
   font-family: 'Casino';
   text-align: center;
+  background-image: url("./assets/suits.jpg");
  
+}
+
+p {
+  margin-top:1%;
+  font-family: 'digital';
+  font-size: 40px;
 }
 
 code {
@@ -17,7 +34,6 @@ code {
 }
 
 .footer {
-  
   height: 15px;
   position: fixed;
   display: grid; 
@@ -82,8 +98,15 @@ h1{
   margin: auto;
 }
 
+h2{
+  margin-top: -1%;
+  font-family: 'lemon';
+  text-decoration: solid;
+  font-size: 40px;
+}
+
 h3 {
-  font-size: 50 px;
+  font-size: 50px;
   text-decoration: none;
   text-emphasis: none;
   margin: auto;
@@ -93,6 +116,14 @@ h5 {font-size: 30px;
   margin: 0;
   text-align: center;
   }
+
+h6{
+  margin-top: -6%;
+  margin-bottom:.5%;
+  font-family:lemon;
+  font-size: 20px;
+}
+
 
 .num_players_button {
   width: 5%;
@@ -116,7 +147,6 @@ h5 {font-size: 30px;
   .num_players_button:active{
     background-color: black;
   }
-  .player_names_container{}
 
 .game_container{
   width: 100%;
@@ -125,7 +155,7 @@ h5 {font-size: 30px;
 
 .board_container{
   padding: 5px;
-  height: 800px;
+  height: 900px;
   width: 650px;
   border-style: solid;
   border-width: 10px;
@@ -141,14 +171,15 @@ h5 {font-size: 30px;
 .score_container{
   padding: 10px;
   height: 600px;
-  width: 400px;
+  width: 500px;
   border-style: solid;
   border-width: 10px;
-  border-color: red;
-  background-color: rgba(255, 255, 255, 0.89);
+  border-color: #9A0000;
+  background-color: #E6E3D4;
   color: black;
   margin-top: 3%;
   margin-left: 30%;
+  
 }
 
 .rolling_board{
@@ -160,17 +191,23 @@ h5 {font-size: 30px;
   border-style: solid;
   border-width: 5px;
   border-color: black;
+  border-radius: 25px;
+}
+
+.board_title{
+  width: 80%
 }
 
 .player_keep{
   padding: 15px;
   text-align: center;
   margin: auto;
-  height: 300px;
+  height: 375px;
   width: 500px;
   border-style: solid;
   border-width: 5px;
   border-color: black;
+  border-radius: 25px;
 }
 
 .nav {
@@ -232,11 +269,12 @@ h5 {font-size: 30px;
       border-style: solid;
       border-width: 3px;
       border-color: gold;
-      background-color: red;
-      margin-top:1%;
+      background-color:#9A0000;
+      margin-top:2%;
       margin-left: 1%;
       margin-right:  1%;
       width: 25%;
+      padding:5px;
     }
 
     table, th, td {
@@ -247,6 +285,8 @@ h5 {font-size: 30px;
       margin:auto;
       padding-left: 10px;
       padding-right: 10px;
+      font-size: 20px;
+      font-family: lemon;
     }
     
 
