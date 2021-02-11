@@ -16,9 +16,10 @@ class SelectPlayersNames extends React.Component {
 
   render() {
     return (
-      <div className="select_players_names_container">
+      <div className="player_names_container">
+        <br></br>
       <form><br></br>
-      <h3>Enter player names:</h3>
+      <h1>Enter player names:</h1><br></br>
         <input type="text" onChange={event => this.handleNameChange(event)} value={this.state.p1} />
         <br></br><br></br>
         <input type="text" onChange={event => this.handleNameChange(event)} value={this.state.p2} />

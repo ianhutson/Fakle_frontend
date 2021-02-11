@@ -14,7 +14,8 @@ class SelectPlayersNumber extends React.Component {
   render() {
     return (
      <div className="num_players_button_container"> 
-       <h3>How many players?</h3>
+     <br></br>
+       <h1>How many players?</h1>
        <br></br>
       <form>
         <input className="num_players_button" type="button" onClick={event => this.handleSelection(event)} value={2} />

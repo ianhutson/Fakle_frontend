@@ -1,11 +1,12 @@
 import React from 'react'
+import Dice from '../DiceContainer'
 
 function PlayerKeep() {
     return (
         <div>
              <div className="player_keep">
                 <h5>Player Keep</h5>
-                <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                <Dice/>
                 <h3>Keep Value - ##</h3>
             </div>
         </div>

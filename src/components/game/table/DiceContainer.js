@@ -15,22 +15,22 @@ function DiceContainer() {
   return (
         <div className="diceContainer">
           <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[0]]}
-            style={{width: 80, height: 80, marginHorizontal: 15 }}
+            style={{width: 80, height: 80, margin:23 }}
           />
           <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[1]]}
-            style={{ width: 80, height: 80, marginHorizontal: 15 }}
+            style={{ width: 80, height: 80, margin: 23 }}
           />
            <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[2]]}
-            style={{ width: 80, height: 80, marginHorizontal: 15 }}
+            style={{ width: 80, height: 80, margin: 23 }}
           />
            <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[3]]}
-            style={{ width: 80, height: 80, marginHorizontal: 15 }}
+            style={{ width: 80, height: 80, margin: 23 }}
           />
            <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[4]]}
-            style={{ width: 80, height: 80, marginHorizontal: 15 }}
+            style={{ width: 80, height: 80, margin: 23 }}
           />
            <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[5]]}
-            style={{ width: 80, height: 80, marginHorizontal: 15 }}
+            style={{ width: 80, height: 80, margin: 23 }}
           />
          
 

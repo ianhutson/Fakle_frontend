@@ -5,8 +5,7 @@ function RollBoard() {
     return (
         <div className="rolling_board">
         <h5>Rolling Board</h5>
-       
-       <br></br> <Dice/>
+        <Dice/>
     </div>
     )
 }
