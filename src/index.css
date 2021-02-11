@@ -144,6 +144,7 @@ h6{
   color: white;
   margin: 10px;
   text-align: center; 
+  font-family: lemon;
 }
 
 .submit_button {
@@ -174,8 +175,6 @@ h6{
 .num_players_button:active{
   background-color: black;
 }
-
-
 
 input{
   background-color: white;

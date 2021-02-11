@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PregameInput extends Component {
+class PregameNameInput extends Component {
 
   state = {
     names: '',
@@ -18,21 +18,15 @@ class PregameInput extends Component {
     this.props.addPregame(this.state);
     this.setState({
       names: event.target.value,
- 
+      
     });
   }
 
   render() {
     return (
-      <div className="num_players_button_container">
-      <br></br>
-      <h1>How many players?</h1>
-      <br></br>
+ <div>
       <form onSubmit={(event)=> this.handleOnSubmit(event)} onChange={(event) => this.handleOnChange(event)}>
-  
-          <input className="num_players_button" type="button" value={2} />
-          <input className="num_players_button" type="button" value={3} />
-          <input className="num_players_button" type="button" value={4} />
+
           <div className="player_names_container">
               <br></br>
               <br></br>
@@ -49,11 +43,11 @@ class PregameInput extends Component {
   
   
               <input type="submit" className="submit_button" />
-          </div>
+              </div>
       </form>
-  </div>
+      </div>
     );
   }
 };
 
-export default PregameInput;
+export default PregameNameInput;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import PregameInput from './PregameInput'
+import PregameNumberInput from './PregameNumberInput'
+import PregameNameInput from './PregameNameInput'
 import Game from '../Game'
 import { connect } from 'react-redux'
 
@@ -7,8 +8,8 @@ class PregameContainer extends Component {
    render(){
     return (
         <div className="pregame_container">
-            <PregameInput addPregame={this.props.addPregame}/>
-            <Game settings={this.props.settings}/>
+            <PregameNumberInput addPregame={this.props.addPregame}/>
+            <PregameNameInput settings={this.props.settings}/>
         </div>
         )
     }
