@@ -1,5 +1,5 @@
 import React from 'react'
-import Game from './components/game/Game'
+import Home from './components/Home'
 import Players from './components/ui/routes/Players'
 import Rules from './components/ui/routes/Rules'
 import Leaderboard from './components/ui/routes/Leaderboard'
@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/players" component={Players} />
           <Route exact path="/rules" component={Rules}/>
           <Route exact path="/leaderboard" component={Leaderboard} />
-          <Route exact path="/" component={Game} />
+          <Route exact path="/" component={Home} />
         </Switch>
         </CSSTransition>
         </TransitionGroup>

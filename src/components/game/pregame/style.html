@@ -1,0 +1,28 @@
+<div className="num_players_button_container">
+    <br></br>
+    <h1>How many players?</h1>
+    <br></br>
+    <form onSubmit={(event)=> this.handleOnSubmit(event)} onChange={(event) => this.handleOnChange(event)}>
+
+        <input className="num_players_button" type="button" value={2} />
+        <input className="num_players_button" type="button" value={3} />
+        <input className="num_players_button" type="button" value={4} />
+        <div className="player_names_container">
+            <br></br>
+            <br></br>
+            <h1>Enter player names:</h1>
+            <br></br>
+            <input type="text" className="p1" value={this.state.p1} />
+            <br></br><br></br>
+            <input type="text" className="p2" value={this.state.p2} />
+            <br></br><br></br>
+            <input type="text" className="p3" value={this.state.p3} />
+            <br></br><br></br>
+            <input type="text" className="p4" value={this.state.p4} />
+            <br></br>
+
+
+            <input type="submit" className="submit_button" />
+        </div>
+    </form>
+</div>
