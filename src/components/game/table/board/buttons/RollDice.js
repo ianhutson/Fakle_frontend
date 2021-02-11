@@ -3,7 +3,7 @@ import React from 'react'
 function RollDice() {
   return (
    
-      <button className="game_buttons" >Roll Dice
+      <button className="game_buttons">Roll Dice
       </button>
     
   )

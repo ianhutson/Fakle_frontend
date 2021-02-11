@@ -32,8 +32,6 @@ function DiceContainer() {
            <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[5]]}
             style={{ width: 80, height: 80, margin: 23 }}
           />
-         
-
         </div>
  
   )

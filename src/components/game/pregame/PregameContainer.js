@@ -1,14 +1,21 @@
-import React from 'react'
-import PlayerNumber from './PlayerNumber'
-import PlayerName from './PlayerNames'
+import React, { Component } from 'react'
+import PregameInput from './PregameInput'
+import Game from '../Game'
+import { connect } from 'react-redux'
 
-function PregameContainer() {
+class PregameContainer extends Component {
+   render(){
     return (
-        <div>
-            <PlayerNumber/>
-            <PlayerName/>
+        <div className="pregame_container">
+            <PregameInput addPregame={this.props.addPregame}/>
+            <Game settings={this.props.settings}/>
         </div>
-    )
+        )
+    }
 }
 
-export default PregameContainer
+const mapStateToProps = ({ settings }) => ({ settings })
+
+const mapDispatchToProps = dispatch => ({ addPregame: pregame => dispatch({ type: "SUBMIT", pregame }) })
+
+export default connect(mapStateToProps, mapDispatchToProps)(PregameContainer)
