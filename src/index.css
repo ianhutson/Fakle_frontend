@@ -163,16 +163,14 @@ h6{
   cursor: pointer;
 }
 
-.submit_button:active{
-  background-color: black;
-}
+
 
 .num_players_button:hover{
   background-color: black;
   cursor: pointer;
 }
 
-.num_players_button:active{
+.num_players_button:focus{
   background-color: black;
 }
 
