@@ -7,7 +7,7 @@ class PregameContainer extends Component {
     return (
         <div className="pregame_container">
             <PregameInput managePregame={this.props.managePregame}/>
-            {this.props.isSubmitted && <GameContainer num_of_players={this.props.num_of_players}/>}
+            {this.props.isSubmitted && <GameContainer />}
         </div>
         )
     }
@@ -18,7 +18,7 @@ class PregameContainer extends Component {
 const mapStateToProps = state => ({ num_of_players: state.num_of_players, names: state.names })
 
 const mapDispatchToProps = dispatch => ({
-  managePregame: text => dispatch({type: 'SUBMIT', text}),
+  managePregame: pregame => dispatch({type: 'SUBMIT', pregame}),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PregameContainer)

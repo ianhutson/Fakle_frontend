@@ -6,7 +6,10 @@ class PregameInput extends Component {
     super(props) 
 
   this.state = {
-    names: ["Player 1", "Player 2", "Player 3", "Player 4"],
+    p1:"Player 1",
+    p2:"Player 2",
+    p3:"Player 3",
+    p4:"Player 4",
     num_of_players: 2,
     isSubmitted: false
   }
@@ -18,22 +21,27 @@ class PregameInput extends Component {
       num_of_players: event.target.value,
     },
      () => {
-      console.log("")
+      console.log("number changed")
     })
   }
 
+ handleChange(event, num) {
+   console.log(num)
+  let key = 'p'+num
+    this.setState({ [key]: event.target.value },
+      () => {
+        console.log('text changed')
+      });
+  }
+
   handleOnSubmit(event) {
-   
-    
     event.preventDefault();
-  
-    debugger
-    this.props.managePregame(this.state.text)
+    this.props.managePregame(this.state)
     this.setState({
-      names: '',
-      isSubmitted: ''
+      isSubmitted: true
     },
     () => {
+      console.log('submitted')
       console.log(this.state)
     })
   }
@@ -42,17 +50,13 @@ class PregameInput extends Component {
     const inputs = [];
  
     for (let i = 1; i <= this.state.num_of_players; i++) {
+      let defaults = ['Player 1', 'Player 2', 'Player 3', 'Player 4', ]
       inputs.push(
         <div>
-        <input type="text" className={"p" + i} defaultValue={this.state.names[i-1]} />
+        <input onChange={(event)=> this.handleChange(event, i)} type="pregame" className={'p'+i} defaultValue={defaults[i-1]} />
         <br></br><br></br>
-        </div>
-            
+        </div>  
       )
-      let p1 = document.getElementsByClassName(p1)
-      let p2 = document.getElementsByClassName(p2)
-      let p3 = document.getElementsByClassName(p3)
-      let p4 = document.getElementsByClassName(p4)
     }
 
         return (
@@ -60,10 +64,10 @@ class PregameInput extends Component {
           <br></br>
           <h1>How many players?</h1>
           <br></br>
-          <form  onClick={(event)=> this.handleClick(event)}>
-              <input className="num_players_button" type="button" value={2} />
-              <input className="num_players_button" type="button" value={3} />
-              <input className="num_players_button" type="button" value={4} />
+          <form >
+              <input onClick={(event)=> this.handleClick(event)} className="num_players_button" type="button" value={2} autoFocus/>
+              <input onClick={(event)=> this.handleClick(event)} className="num_players_button" type="button" value={3} />
+              <input onClick={(event)=> this.handleClick(event)} className="num_players_button" type="button" value={4} />
               <br></br><br></br><br></br>
           </form>
           <div>
@@ -71,6 +75,7 @@ class PregameInput extends Component {
             {inputs}<br></br>
             <input type="submit" className="submit_button"/>
           </form>
+    
           </div>
           </div>
         );   
