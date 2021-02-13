@@ -9,6 +9,7 @@ import { createStore } from 'redux';
 
 const store = createStore(managePregame)
 
+// test
 ReactDOM.render(
 <Provider store={store}>
 <App />
