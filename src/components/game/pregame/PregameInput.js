@@ -60,6 +60,7 @@ class PregameInput extends Component {
     }
 
         return (
+          <div className="pregame_container">
           <div className="num_players_button_container">
           <br></br>
           <h1>How many players?</h1>
@@ -76,6 +77,7 @@ class PregameInput extends Component {
             <input type="submit" className="submit_button"/>
           </form>
     
+          </div>
           </div>
           </div>
         );   

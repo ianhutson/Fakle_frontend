@@ -5,8 +5,10 @@ import GameContainer from '../table/GameContainer'
 class PregameContainer extends Component {
    render(){
     return (
-        <div className="pregame_container">
-            <PregameInput managePregame={this.props.managePregame}/>
+        <div>
+        
+            {this.props.isSubmitted === false && <PregameInput managePregame={this.props.managePregame}/>}
+          
             {this.props.isSubmitted && <GameContainer />}
         </div>
         )
@@ -15,7 +17,7 @@ class PregameContainer extends Component {
 
 
 
-const mapStateToProps = state => ({ num_of_players: state.num_of_players, names: state.names })
+const mapStateToProps = state => ({ num_of_players: state.num_of_players, p1: state.p1, p2: state.p2, p3: state.p3, p4: state.p4, isSubmitted: state.isSubmitted })
 
 const mapDispatchToProps = dispatch => ({
   managePregame: pregame => dispatch({type: 'SUBMIT', pregame}),
