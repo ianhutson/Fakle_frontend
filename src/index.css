@@ -56,7 +56,7 @@ code {
   bottom: 0;
   width: 100%;
   font-size: 14px;
-  background-color: rgb(192, 45, 26);
+  background-color: #9A0000;
   color: white;
   padding: 7px;
 }
@@ -92,7 +92,7 @@ code {
   width: 100%;
   background-size: cover;
   position: relative; 
-  background-color: rgb(192, 45, 26);
+  background-color: #9A0000;
   color: #fff;
   height:60px;
   display: inline-block;

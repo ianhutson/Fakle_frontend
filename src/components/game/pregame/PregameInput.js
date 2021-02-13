@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import GameContainer from '../table/GameContainer'
 
 class PregameInput extends Component {
   constructor(props){ 
@@ -7,10 +7,10 @@ class PregameInput extends Component {
 
   this.state = {
     names: ["Player 1", "Player 2", "Player 3", "Player 4"],
-    num_of_players: 2
+    num_of_players: 2,
+    isSubmitted: false
   }
 
-  this.handleClick = this.handleClick.bind(this) 
 }
 
   handleClick(event) {
@@ -18,30 +18,41 @@ class PregameInput extends Component {
       num_of_players: event.target.value,
     },
      () => {
-      console.log(this.state)
+      console.log("")
     })
   }
 
   handleOnSubmit(event) {
+   
+    
     event.preventDefault();
-    this.props.addSettings(this.state);
+  
+    debugger
+    this.props.managePregame(this.state.text)
     this.setState({
-      names: event.target.value,
-    });
+      names: '',
+      isSubmitted: ''
+    },
+    () => {
+      console.log(this.state)
+    })
   }
 
   render() {    
     const inputs = [];
-
+ 
     for (let i = 1; i <= this.state.num_of_players; i++) {
       inputs.push(
         <div>
-        <input type="text" className={"p" + i} value={this.state.names[i-1]} />
+        <input type="text" className={"p" + i} defaultValue={this.state.names[i-1]} />
         <br></br><br></br>
         </div>
             
       )
-      console.log(inputs)
+      let p1 = document.getElementsByClassName(p1)
+      let p2 = document.getElementsByClassName(p2)
+      let p3 = document.getElementsByClassName(p3)
+      let p4 = document.getElementsByClassName(p4)
     }
 
         return (
@@ -56,7 +67,7 @@ class PregameInput extends Component {
               <br></br><br></br><br></br>
           </form>
           <div>
-          <form onSubmit={(event)=> this.handleOnSubmit(event)} >
+          <form onSubmit={(event) => this.handleOnSubmit(event)} >
             {inputs}<br></br>
             <input type="submit" className="submit_button"/>
           </form>

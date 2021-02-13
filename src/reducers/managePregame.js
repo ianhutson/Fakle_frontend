@@ -1,21 +1,17 @@
 export default function managePregame(state = {
-    num_of_players: [],
-    names: [],
+  names: ["Player 1", "Player 2", "Player 3", "Player 4"],
+  num_of_players: 2,
+  isSubmitted: false
   }, action) {
     switch (action.type) {
-  
-    case "NUMBER":
-      console.log('hi')
-      return {
-        ...state, num_of_players: action.payload 
-      }
 
-    case 'SUBMIT_NAMES':
+    case 'SUBMIT':
         const names = { text: action.text };
 
         return {
           ...state,
-          names: [ ...state.names, names]
+          names: [ ...state.names, names], 
+          isSubmitted: true
           }
 
       default:
