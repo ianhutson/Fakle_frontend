@@ -10,13 +10,13 @@ const Rules = () => {
             <h2 style={{textDecoration: "underline"}}>Game Summary</h2>
             <div style={{fontFamily: "lemon"}}>
 <h1>OBJECT OF THE GAME:</h1>
-<h4>The object of the game of Fakle is to score a minimum of 1,000 points.</h4>
+<h5 className="rules">The object of the game of Fakle is to score a minimum of 1,000 points.</h5>
 
 <h1>NUMBER OF PLAYERS:</h1>
-<h4>Fakle can be played by 2-4 players.</h4>
+<h5 className="rules">Fakle can be played by 2-4 players.</h5>
 
 <h1>HOW TO PLAY:</h1>
-<h4>
+<h5 className="rules">
 The following Fakle rules are the most commonly used, but there are numerous variations to choose from. Before the game begins, players should establish which rules or variations will be used. Our scoring summary chart makes this process easy and provides for endless variety in your Fakle games!
 <br></br><br></br>
 One player is chosen to begin and play moves clockwise around the table. Each player in turn rolls all six dice and checks to see if they have rolled any scoring dice or combinations. (See Scoring below.) Any dice that score may be set aside and then the player may choose to roll all the remaining dice. The player must set aside at least one scoring die of their choice if possible but is not required to set aside all scoring dice.
@@ -30,9 +30,9 @@ A player’s turn continues until either they decide to stop (at which point the
 If a player scores no points on a roll, this is known as a Fakle. The player may continue to roll any dice that have not been previously set aside for scoring, but all of their points gained so far that turn are lost.
 <br></br><br></br>
 At the end of a player’s turn, any points they have scored are written down and the dice are passed to the next player.
-</h4>
+</h5>
 <h1>SCORING:</h1>
-<h4>
+<h5 className="rules">
 1	10 points<br></br>
 5	5 points<br></br>
 Three 1's	10 points<br></br>
@@ -51,9 +51,9 @@ Sometimes a single roll will provide multiple ways to score. For example, a play
 15 points for the 1 and a 5<br></br>
 50 points for the three 5's<br></br>
 600points for the 1 and the three 5's
-</h4>
+</h5>
 <h1>WINNING:</h1>
-<h4>The first player to score a total of 1,000 or more points wins, provided that no other players with a remaining turn can exceed that score.</h4>
+<h5 className="rules">The first player to score a total of 1,000 or more points wins, provided that no other players with a remaining turn can exceed that score.</h5>
 <HomeButton style={{}}/>
 </div>
 </div>

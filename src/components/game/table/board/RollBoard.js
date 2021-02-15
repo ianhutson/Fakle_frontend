@@ -23,6 +23,7 @@ render (){
     return (
         <div onClick={(event)=> this.handleClick(event)} className="rolling_board">
         <Title/>
+        <div className="line"></div>
         <Dice />
     </div>
     )

@@ -7,9 +7,14 @@ function PlayerKeep() {
         <div>
              <div className="player_keep">
                 <Title/>
+                <div className="line"></div>
                 <Dice/>
+                <div className="line"></div>
+                <br></br>
                 <Value/>
-                <p>150</p>
+                <div className="value_container">
+                <div className="keep_value">150</div>
+                </div>
             </div>
         </div>
     )

@@ -24,7 +24,8 @@ class Board extends Component {
         <div>
             <div className="board_container">  
             <h4 > {this.state.current_player}'s Turn!</h4>
-            <h6>TURN {this.state.current_turn} </h6>
+            <h6 className="turn">TURN {this.state.current_turn} </h6>
+            <br></br><br></br>
             <RollBoard/>
             <br></br>
             <PlayerKeep/>
