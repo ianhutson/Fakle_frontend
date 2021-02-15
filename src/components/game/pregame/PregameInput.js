@@ -76,7 +76,6 @@ class PregameInput extends Component {
             {inputs}<br></br>
             <input type="submit" className="submit_button"/>
           </form>
-    
           </div>
           </div>
           </div>

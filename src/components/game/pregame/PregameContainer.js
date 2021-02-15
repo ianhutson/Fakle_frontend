@@ -8,8 +8,8 @@ class PregameContainer extends Component {
         <div>
         
             {this.props.isSubmitted === false && <PregameInput managePregame={this.props.managePregame}/>}
-          
-            {this.props.isSubmitted && <GameContainer />}
+
+            {this.props.isSubmitted && <GameContainer settings={this.props}/>}
         </div>
         )
     }

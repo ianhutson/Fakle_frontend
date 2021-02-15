@@ -9,16 +9,14 @@ export default function managePregame(state = {
     switch (action.type) {
 
     case 'SUBMIT':
-      console.log(action.pregame)
         const settings = { pregame: action.pregame };
-
         return {
           ...state,
-          p1: settings, 
-          p2: settings,
-          p3: settings,
-          p4: settings,
-          num_of_players: settings,
+          p1: settings.pregame.p1, 
+          p2: settings.pregame.p2,
+          p3: settings.pregame.p3,
+          p4: settings.pregame.p4,
+          num_of_players: settings.pregame.num_of_players,
           isSubmitted: true
           }
 
