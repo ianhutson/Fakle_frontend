@@ -15,11 +15,11 @@
 
 body {
   color: rgba(255, 255, 255, 0.842);
-  background-color: black;
+  background-color: lavenderx;
   margin: 0;
   font-family: 'Casino';
   text-align: center;
-  background-image: url("./assets/suits.jpg");
+  ;
 }
 
 p {
@@ -99,7 +99,7 @@ code {
 }
 
 .logo {
-  margin-top:.225%;
+  margin-top:1%;
   height: 8%;
   width:8%;
 }
@@ -162,7 +162,6 @@ h6{
   background-color: black;
   cursor: pointer;
 }
-
 
 
 .num_players_button:hover{
@@ -273,48 +272,6 @@ input{
   margin-top: -2.25%;
 }
 
-.nav__card {width: 10%;
-  display: inline-block;  
-  background-color: green;
-  float: left;
-  margin-left: 1%;
-}
-
-.nav__card:hover {
-  transform: translateY(-.5rem) scale(1.03);
-  box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.35); 
-}
-
-.nav__card:active {
-  box-shadow: 0 1rem 1rem rgba(14, 17, 17, 0.15);
-  transform: translateY(0); 
-}
-
-.nav__link {
-  font-size: 20px;
-  text-decoration: none;
-  display: block;
-  grid-template-rows: 10 15rem;
-  grid-template-columns: repeat(3, 1fr);
-  color: white;
-  border-style: solid;
-  border-width: 5px;
-  border-color: gold;
-  box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.25); 
-  width: 95%; 
-  align-self: center;
-}
-
-.nav__content {
-  grid-row: 1 / 2;
-  grid-column: 1 / 4;
-  align-self: center; 
-}
-
-.nav__text {
-  font-size: 1.23rem; 
-}
-
 .buttons_container{
   text-align: center;
   margin-top: 1%; 
@@ -343,6 +300,27 @@ input{
   margin-right:  1%;
   width: 25%;
   padding:5px;
+}
+
+.nav_buttons {
+  font-size: 20px;
+  text-decoration: none;
+  font-family: casino;
+  color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-color: gold;
+  background-color: green;
+  margin-top: -.5%;
+  margin-left: .5%;
+  margin-right:  .5%;
+  width: 10%;
+  padding:5px;
+  float:left;
+}
+
+.nav_link {
+  text-decoration: none;
 }
 
 table, th, td {
