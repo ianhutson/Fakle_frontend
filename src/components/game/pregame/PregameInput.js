@@ -36,7 +36,7 @@ class PregameInput extends Component {
     for (let i = 1; i <= this.state.num_of_players; i++) {
       inputs.push(
         <div>
-        <input type="text" className={"p" + i} value={this.state.names[i-1]} />
+        <input type="text" className={"p" + i} defaultValue={this.state.names[i-1]} />
         <br></br><br></br>
         </div>
             
