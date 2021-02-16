@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import GameContainer from '../table/GameContainer'
 
 class PregameInput extends Component {
   constructor(props){ 
     super(props) 
 
   this.state = {
-    names: ["Player 1", "Player 2", "Player 3", "Player 4"],
-    num_of_players: 2
+    p1:"Player 1",
+    p2:"Player 2",
+    p3:"Player 3",
+    p4:"Player 4",
+    num_of_players: 2,
+    isSubmitted: false
   }
 
-  this.handleClick = this.handleClick.bind(this) 
 }
 
   handleClick(event) {
@@ -18,48 +21,62 @@ class PregameInput extends Component {
       num_of_players: event.target.value,
     },
      () => {
-      console.log(this.state)
+      console.log("number changed")
     })
+  }
+
+ handleChange(event, num) {
+   console.log(num)
+  let key = 'p'+num
+    this.setState({ [key]: event.target.value },
+      () => {
+        console.log('text changed')
+      });
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addSettings(this.state);
+    this.props.managePregame(this.state)
     this.setState({
-      names: event.target.value,
-    });
+      isSubmitted: true
+    },
+    () => {
+      console.log('submitted')
+      console.log(this.state)
+    })
   }
 
   render() {    
     const inputs = [];
-
+ 
     for (let i = 1; i <= this.state.num_of_players; i++) {
+      let defaults = ['Player 1', 'Player 2', 'Player 3', 'Player 4', ]
       inputs.push(
         <div>
-        <input type="text" className={"p" + i} defaultValue={this.state.names[i-1]} />
+        <input onChange={(event)=> this.handleChange(event, i)} type="pregame" className={'p'+i} defaultValue={defaults[i-1]} />
         <br></br><br></br>
-        </div>
-            
+        </div>  
       )
-      console.log(inputs)
     }
 
         return (
+          <div className="pregame_container">
           <div className="num_players_button_container">
           <br></br>
           <h1>How many players?</h1>
           <br></br>
-          <form  onClick={(event)=> this.handleClick(event)}>
-              <input className="num_players_button" type="button" value={2} />
-              <input className="num_players_button" type="button" value={3} />
-              <input className="num_players_button" type="button" value={4} />
+          <form >
+              <input onClick={(event)=> this.handleClick(event)} className="num_players_button" type="button" value={2} autoFocus/>
+              <input onClick={(event)=> this.handleClick(event)} className="num_players_button" type="button" value={3} />
+              <input onClick={(event)=> this.handleClick(event)} className="num_players_button" type="button" value={4} />
               <br></br><br></br><br></br>
           </form>
           <div>
-          <form onSubmit={(event)=> this.handleOnSubmit(event)} >
+          <form onSubmit={(event) => this.handleOnSubmit(event)} >
             {inputs}<br></br>
             <input type="submit" className="submit_button"/>
           </form>
+          </div>
           </div>
           </div>
         );   

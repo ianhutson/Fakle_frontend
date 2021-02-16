@@ -7,27 +7,21 @@ const Header = () => {
       <div className='header'>
             <Logo/>
         <nav className='nav'>
-        <div className='nav__card'>
-            <NavLink className='nav__link' to="/rules">
-                <div className='nav__content'>
+            <NavLink className="nav_link" to="/rules">
+                <div className='nav_buttons'>
                     Rules
                 </div>
             </NavLink>
-        </div>
-        <div className='nav__card'>
-            <NavLink className='nav__link' to="/leaderboard">
-                <div className='nav__content'>
+            <NavLink className="nav_link" to="/leaderboard">
+                <div className='nav_buttons'>
                    Leaderboard
                 </div>
             </NavLink>
-        </div>
-        <div className='nav__card'>
-            <NavLink className='nav__link' to="/players">
-                <div className='nav__content'>
+            <NavLink className="nav_link" to="/players">
+                <div className='nav_buttons'>
                    Edit Players
                 </div>
             </NavLink>
-        </div>
         </nav>
         </div>
   )

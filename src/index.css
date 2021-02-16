@@ -15,17 +15,11 @@
 
 body {
   color: rgba(255, 255, 255, 0.842);
-  background-color: black;
+  background-color: lavenderx;
   margin: 0;
   font-family: 'Casino';
   text-align: center;
-  background-image: url("./assets/suits.jpg");
-}
-
-p {
-  margin-top:1%;
-  font-family: 'digital';
-  font-size: 40px;
+  ;
 }
 
 code {
@@ -56,7 +50,7 @@ code {
   bottom: 0;
   width: 100%;
   font-size: 14px;
-  background-color: rgb(192, 45, 26);
+  background-color: #9A0000;
   color: white;
   padding: 7px;
 }
@@ -92,14 +86,14 @@ code {
   width: 100%;
   background-size: cover;
   position: relative; 
-  background-color: rgb(192, 45, 26);
+  background-color: #9A0000;
   color: #fff;
   height:60px;
   display: inline-block;
 }
 
 .logo {
-  margin-top:.225%;
+  margin-top:1%;
   height: 8%;
   width:8%;
 }
@@ -124,6 +118,13 @@ h3 {
   margin: auto;
 }
 
+h4{
+  margin-top: -1%;
+  font-family: 'lemon';
+  text-decoration: none;
+  font-size: 40px;
+}
+
 h5 {font-size: 30px;
   margin: 0;
   text-align: center;
@@ -134,6 +135,43 @@ h6{
   margin-bottom:.5%;
   font-family:lemon;
   font-size: 20px;
+}
+
+.rules{
+  font-size: 18px;
+  margin:1%;
+}
+
+.line{
+  padding:0;
+  width:100%;
+  background-color: black;
+  height:5px;
+}
+
+.value_container{
+  text-align: center;
+  background-color: #9A0000;
+  margin:auto;
+  margin-top:1%;
+  height: 30px;
+  width: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 25px;
+}
+
+.keep_value{
+  margin: auto;
+  text-align: auto;
+  font-family: 'digital';
+  font-size: 30px;
+  margin-right: 8%
+}
+
+.turn{
+  margin-top: -10%;
 }
 
 .num_players_button {
@@ -162,8 +200,6 @@ h6{
   background-color: black;
   cursor: pointer;
 }
-
-
 
 .num_players_button:hover{
   background-color: black;
@@ -208,13 +244,14 @@ input{
 }
 
 .board_container{
-  padding: 5px;
-  height: 900px;
+  padding: 15px;
+  height: 1000px;
   width: 650px;
   background-color: green;
   text-align: center;
   margin-top: 3%;
-  margin-left: 50%;
+  margin-bottom: 5%;
+  margin-left: 1%;
   float:left;
   border-style: solid;
   border-width: 10px;
@@ -223,16 +260,16 @@ input{
 }
 
 .score_container{
-  padding: 10px;
+  padding: 15px;
   height: 600px;
   width: 500px;
   border-style: solid;
   border-width: 10px;
   border-color: #9A0000;
-  background-color: #E6E3D4;
-  color: black;
-  margin-top: 3%;
-  margin-left: 30%;
+  background-color: #rgb(167, 157, 157);
+  color: #000000;
+  margin-top: 2%;
+  margin-left: 1.5%;
 }
 
 .rolling_board{
@@ -248,14 +285,15 @@ input{
 }
 
 .board_title{
-  width: 80%
+  width: 80%;
 }
 
 .player_keep{
   padding: 15px;
   text-align: center;
-  margin: auto;
-  height: 375px;
+  margin:auto;
+  margin-bottom: 5%;
+  height: 425px;
   width: 500px;
   border-style: solid;
   border-width: 5px;
@@ -270,48 +308,6 @@ input{
   justify-content: center;
   align-content: center;
   margin-top: -2.25%;
-}
-
-.nav__card {width: 10%;
-  display: inline-block;  
-  background-color: green;
-  float: left;
-  margin-left: 1%;
-}
-
-.nav__card:hover {
-  transform: translateY(-.5rem) scale(1.03);
-  box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.35); 
-}
-
-.nav__card:active {
-  box-shadow: 0 1rem 1rem rgba(14, 17, 17, 0.15);
-  transform: translateY(0); 
-}
-
-.nav__link {
-  font-size: 20px;
-  text-decoration: none;
-  display: block;
-  grid-template-rows: 10 15rem;
-  grid-template-columns: repeat(3, 1fr);
-  color: white;
-  border-style: solid;
-  border-width: 5px;
-  border-color: gold;
-  box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.25); 
-  width: 95%; 
-  align-self: center;
-}
-
-.nav__content {
-  grid-row: 1 / 2;
-  grid-column: 1 / 4;
-  align-self: center; 
-}
-
-.nav__text {
-  font-size: 1.23rem; 
 }
 
 .buttons_container{
@@ -342,6 +338,31 @@ input{
   margin-right:  1%;
   width: 25%;
   padding:5px;
+}
+
+.nav_buttons {
+  font-size: 20px;
+  text-decoration: none;
+  font-family: casino;
+  color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-color: gold;
+  background-color: green;
+  margin-top: -.5%;
+  margin-left: .5%;
+  margin-right:  .5%;
+  width: 10%;
+  padding:5px;
+  float:left;
+}
+
+.nav_buttons:hover{
+  background-color: black;
+}
+
+.nav_link {
+  text-decoration: none;
 }
 
 table, th, td {
