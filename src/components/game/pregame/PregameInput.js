@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GameContainer from '../table/GameContainer'
+
 
 class PregameInput extends Component {
   constructor(props){ 
@@ -36,7 +36,7 @@ class PregameInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.managePregame(this.state)
+    this.props.manageGame(this.state)
     this.setState({
       isSubmitted: true
     },

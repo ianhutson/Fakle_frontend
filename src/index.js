@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import "./index.css";
-import managePregame from './reducers/managePregame'
-
+import manageGame from './reducers/manageGame'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-const store = createStore(managePregame)
+const store = createStore(manageGame)
+
 
 ReactDOM.render(
 <Provider store={store}>

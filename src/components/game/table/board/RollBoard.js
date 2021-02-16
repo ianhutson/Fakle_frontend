@@ -5,29 +5,19 @@ import React, { Component } from 'react';
 class RollBoard extends Component {
     constructor(props){ 
       super(props) 
-  
-    this.state = {
     }
-    }
-    
-handleClick(event) {
-    this.setState({
-      
-    },
-     () => {
-      console.log(this)
-    })
-  }
+
 
 render (){
     return (
-        <div onClick={(event)=> this.handleClick(event)} className="rolling_board">
+        <div className="rolling_board">
         <Title/>
         <div className="line"></div>
-        <Dice />
+        <p> </p>
     </div>
+    
     )
-}
+} 
 }
 
 export default RollBoard

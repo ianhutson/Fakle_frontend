@@ -19,7 +19,6 @@ body {
   margin: 0;
   font-family: 'Casino';
   text-align: center;
-  ;
 }
 
 code {
@@ -90,11 +89,11 @@ code {
   color: #fff;
   height:60px;
   display: inline-block;
+  margin: auto;
 }
 
 .logo {
-  margin-top:1%;
-  height: 8%;
+  height: 5%;
   width:8%;
 }
 
@@ -349,7 +348,7 @@ input{
   border-width: 3px;
   border-color: gold;
   background-color: green;
-  margin-top: -.5%;
+  margin-top: 0%;
   margin-left: .5%;
   margin-right:  .5%;
   width: 10%;
