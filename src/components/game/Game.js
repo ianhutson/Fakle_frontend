@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Board from './table/board/BoardContainer'
 import Score from './scoreboard/Score'
-import { keep } from  './actions/keep';
-import { roll } from  './actions/roll';
-import { end } from  './actions/end';
+import PlayerKeep from './table/board/PlayerKeep'
+import RollBoard from './table/board/RollBoard'
+import ButtonsContainer from './table/board/ButtonsContainer'
 
 class Game extends Component{
 constructor(props) {
@@ -12,41 +11,50 @@ constructor(props) {
     this.state = {
         }
     }
-    render() {
+    player(){ let x
+        if (this.props.current_player === 1) x = this.props.settings.p1
+        else if(this.props.current_player === 2) x = this.props.settings.p2
+        else if(this.props.current_player === 3) x = this.props.settings.p3
+        else x = this.props.settings.p4
+        return x;
+    }
+
+    render()
+    {
     return (
         <div className="game_container">
-                <Board  game={this.props} />
+               <div>
+            <div className="board_container">  
+            <h4 > {this.player()}'s Turn!</h4>
+            <h6 className="turn">TURN {this.props.current_turn} </h6>
+            <br></br><br></br>
+            <RollBoard settings={this.props}/>
+            <br></br>
+            <PlayerKeep settings={this.props}/>
+            <ButtonsContainer settings={this.props}/>
+        </div>
+    </div>
                 <Score settings={this.props.settings}/>
             </div>
     )
     }
 }
 
-    // const mapStateToProps = state => ({p1_score: 0,
-    //     p2_score: 0, 
-    //     p3_score: 0, 
-    //     p4_score: 0, 
-    //     current_player: 1,
-    //     current_turn: 1,
-    //     keep_value: 0,
-    //     rollable_dice: 6,
-    //     rolled_dice: [],
-    //     kept_dice: [],
-    //     selected_value: 0,
-    // })
+    const mapStateToProps = state => ({p1_score: state.p1_score,
+        p2_score: state.p2_score, 
+        p3_score: state.p3_score, 
+        p4_score: state.p4_score, 
+        current_player: state.current_player,
+        current_turn: state.current_turn,
+        keep_value: state.keep_value,
+        rollable_dice: state.rollable_dice,
+        rolled_dice: state.rolled_dice,
+        kept_dice: state.kept_dice,
+        selected_value: state.selected_value,
+    })
 
 
-    const mapDispatchToProps = dispatch => {
-        return {
-            roll: () => {
-                dispatch(roll())},
-            keep: () => {
-                dispatch(keep())},
-            end: () => {
-                dispatch(end())},
-            }
-        }
     
 
     
-    export default connect(null, mapDispatchToProps)(Game)
+    export default connect(mapStateToProps)(Game)

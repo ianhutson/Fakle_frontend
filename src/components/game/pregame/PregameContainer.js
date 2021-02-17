@@ -4,13 +4,14 @@ import PregameInput from './PregameInput'
 import Game from '../Game'
 
 class PregameContainer extends Component {
- 
+    
 
    render(){
     return (
         <div>
-            {this.props.isSubmitted === false && <PregameInput manageGame={this.props.manageGame}/>}
+            {this.props.isSubmitted === false && <PregameInput submit={this.props.submit}/>}
             {this.props.isSubmitted && <Game settings={this.props}/>}
+          
         </div>
         )
     }
@@ -26,7 +27,10 @@ const mapStateToProps = state => ({
      })
 
 const mapDispatchToProps = dispatch => ({
-  manageGame: game => dispatch({type: 'SUBMIT', game}),
+  submit: game => dispatch({type: 'SUBMIT', game}),
+  roll: roll => dispatch({type: 'ROLL', roll}),
+  keep: keep => dispatch({type: 'KEEP', keep}),
+  end: end => dispatch({type: 'END', end}),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PregameContainer)

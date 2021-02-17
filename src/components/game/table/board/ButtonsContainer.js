@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux'
 
 class GameButtons extends Component {
 
@@ -13,13 +13,14 @@ class GameButtons extends Component {
 render(){
     return (
         <div>
-            <button onClick={this.props.game.game.roll} className="game_buttons" >Roll Dice</button>
-            <button onClick={this.props.game.game.keep} className="game_buttons">Keep Selected</button> 
-            <button onClick={this.props.game.game.end} className="game_buttons">End Turn</button>
-           
+            <button onClick={this.props.settings.settings.roll} className="game_buttons" >Roll Dice</button>
+            <button onClick={this.props.keep} className="game_buttons">Keep Selected</button> 
+            <button onClick={this.props.end} className="game_buttons">End Turn</button>
         </div>
     )
 }
 }
 
-export default GameButtons
+
+
+export default connect()(GameButtons)

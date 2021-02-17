@@ -19,7 +19,7 @@ export default function manageGame(state = {
     isSubmitted: false
 
     }, action) {
-      console.log(action)
+
       switch (action.type) {
 
       case 'SUBMIT':
@@ -35,9 +35,10 @@ export default function manageGame(state = {
             }
 
       case 'ROLL':
+        console.log(state)
           return {
             ...state,
-            rolled_dice: Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6))
+            rolled_dice: Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1)
             };
             
            

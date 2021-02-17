@@ -36,7 +36,7 @@ class PregameInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.manageGame(this.state)
+    this.props.submit(this.state)
     this.setState({
       isSubmitted: true
     },
