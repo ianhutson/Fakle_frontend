@@ -22,18 +22,18 @@ constructor(props) {
     }
 }
 
-    const mapStateToProps = state => ({p1_score: 0,
-        p2_score: 0, 
-        p3_score: 0, 
-        p4_score: 0, 
-        current_player: 1,
-        current_turn: 1,
-        keep_value: 0,
-        rollable_dice: 6,
-        rolled_dice: [],
-        kept_dice: [],
-        selected_value: 0,
-    })
+    // const mapStateToProps = state => ({p1_score: 0,
+    //     p2_score: 0, 
+    //     p3_score: 0, 
+    //     p4_score: 0, 
+    //     current_player: 1,
+    //     current_turn: 1,
+    //     keep_value: 0,
+    //     rollable_dice: 6,
+    //     rolled_dice: [],
+    //     kept_dice: [],
+    //     selected_value: 0,
+    // })
 
 
     const mapDispatchToProps = dispatch => {
@@ -49,4 +49,4 @@ constructor(props) {
     
 
     
-    export default connect(mapStateToProps, mapDispatchToProps)(Game)
+    export default connect(null, mapDispatchToProps)(Game)

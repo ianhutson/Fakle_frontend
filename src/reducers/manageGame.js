@@ -19,7 +19,7 @@ export default function manageGame(state = {
     isSubmitted: false
 
     }, action) {
-      
+      console.log(action)
       switch (action.type) {
 
       case 'SUBMIT':
