@@ -161,6 +161,10 @@ h6{
   border-radius: 25px;
 }
 
+.keep_container{
+  height: 65%;
+}
+
 .keep_value{
   margin: auto;
   text-align: auto;

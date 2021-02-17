@@ -9,7 +9,7 @@ export default function manageGame(state = {
     keep_value: 0,
     rollable_dice: 6,
     kept_dice: [],
-    rolled_dice: [],
+    rolled_dice: [1, 2, 3, 4, 5, 6],
     selected_value: 0,
     p1:"Player 1",
     p2:"Player 2",

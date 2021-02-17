@@ -1,4 +1,5 @@
-import React from 'react'
+import { connect } from 'react-redux'
+import React, { Component } from 'react';
 
 const dicearr = [
   '/1.png',
@@ -9,34 +10,38 @@ const dicearr = [
   '/6.png',
 ]
 
-function DiceContainer() {
-  const [statearr] = React.useState([2, 5, 3, 1, 2, 5])
- 
+class DiceContainer extends Component{
+  constructor(props) {
+      super(props);
+    }
+
+  render() {
   return (
         <div className="diceContainer">
-          <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[0]]}
+          {console.log(this.props.settings.settings.rolled_dice)}
+          <img alt="" src={process.env.PUBLIC_URL + dicearr[this.props.settings.settings.rolled_dice[0]-1]}
             style={{width: 80, height: 80, margin:23 }}
           />
-          <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[1]]}
+          <img alt="" src={process.env.PUBLIC_URL + dicearr[this.props.settings.settings.rolled_dice[1]-1]}
             style={{ width: 80, height: 80, margin: 23 }}
           />
-           <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[2]]}
+           <img alt="" src={process.env.PUBLIC_URL + dicearr[this.props.settings.settings.rolled_dice[2]-1]}
             style={{ width: 80, height: 80, margin: 23 }}
           />
-           <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[3]]}
+           <img alt="" src={process.env.PUBLIC_URL + dicearr[this.props.settings.settings.rolled_dice[3]-1]}
             style={{ width: 80, height: 80, margin: 23 }}
           />
-           <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[4]]}
+           <img alt="" src={process.env.PUBLIC_URL + dicearr[this.props.settings.settings.rolled_dice[4]-1]}
             style={{ width: 80, height: 80, margin: 23 }}
           />
-           <img alt="" src={process.env.PUBLIC_URL + dicearr[statearr[5]]}
+           <img alt="" src={process.env.PUBLIC_URL + dicearr[this.props.settings.settings.rolled_dice[5]-1]}
             style={{ width: 80, height: 80, margin: 23 }}
           />
         </div>
  
   )
 }
+}
 
-
-export default DiceContainer
+export default connect() (DiceContainer)
 

@@ -11,11 +11,9 @@ class PregameContainer extends Component {
         <div>
             {this.props.isSubmitted === false && <PregameInput submit={this.props.submit}/>}
             {this.props.isSubmitted && <Game settings={this.props}/>}
-          
         </div>
         )
-    }
-}
+    }}
 
 const mapStateToProps = state => ({ 
     num_of_players: state.num_of_players, 

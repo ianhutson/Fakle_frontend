@@ -8,7 +8,7 @@ function PlayerKeep() {
              <div className="player_keep">
                 <Title/>
                 <div className="line"></div>
-                <Dice/>
+                <div className="keep_container"></div>
                 <div className="line"></div>
                 <br></br>
                 <Value/>

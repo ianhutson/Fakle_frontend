@@ -1,6 +1,7 @@
 import Dice from '../DiceContainer'
 import Title from './RollBoardTitle'
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 class RollBoard extends Component {
     constructor(props){ 
@@ -12,11 +13,12 @@ render (){
         <div className="rolling_board">
         <Title/>
         <div className="line"></div>
-        {console.log(this.props.settings.rolled_dice)}
-        <p>{this.props.settings.rolled_dice}</p>
+        <div className="dice_container">
+            <Dice settings={this.props}/>
+        </div>
     </div>)
     } 
 }
 
 
-export default RollBoard
+export default connect()(RollBoard)

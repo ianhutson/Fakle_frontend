@@ -8,8 +8,7 @@ import ButtonsContainer from './table/board/ButtonsContainer'
 class Game extends Component{
 constructor(props) {
     super(props);
-    this.state = {
-        }
+    
     }
     player(){ let x
         if (this.props.current_player === 1) x = this.props.settings.p1
@@ -32,10 +31,10 @@ constructor(props) {
             <br></br>
             <PlayerKeep settings={this.props}/>
             <ButtonsContainer settings={this.props}/>
-        </div>
-    </div>
-                <Score settings={this.props.settings}/>
             </div>
+        </div>
+            <Score settings={this.props.settings}/>
+        </div>
     )
     }
 }
