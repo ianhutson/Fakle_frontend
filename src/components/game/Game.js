@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Score from './scoreboard/Score'
-import PlayerKeep from './table/board/PlayerKeep'
-import RollBoard from './table/board/RollBoard'
-import ButtonsContainer from './table/board/ButtonsContainer'
+import PlayerKeep from './table/PlayerKeep'
+import RollBoard from './table/RollBoard'
+import ButtonsContainer from './table/ButtonsContainer'
 
 class Game extends Component{
 constructor(props) {

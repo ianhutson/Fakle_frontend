@@ -1,5 +1,4 @@
 import Dice from './DiceContainer'
-import Title from './RollBoardTitle'
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
@@ -11,7 +10,9 @@ class RollBoard extends Component {
 render (){
     return (
         <div className="rolling_board">
-        <Title/>
+        <div >
+            <img className="board_title" alt="title" src={process.env.PUBLIC_URL + "/roll.png"}/>
+        </div>
         <div className="line"></div>
         <div className>
             <Dice settings={this.props}/>

@@ -167,12 +167,12 @@ h6{
   height: 65%;
 }
 
-.keep_value{
+.value{
   margin: auto;
   text-align: auto;
   font-family: 'digital';
   font-size: 30px;
-  margin-right: 8%
+
 }
 
 .turn{
@@ -398,6 +398,5 @@ table, th, td {
 }
 
 .dice_background_active {
- 
   background: linear-gradient(#5F8EC9,#2255BE) 0 0 / 80px 80px no-repeat;
 }
