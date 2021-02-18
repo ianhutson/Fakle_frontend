@@ -50,6 +50,7 @@ constructor(props) {
         rolled_dice: state.rolled_dice,
         kept_dice: state.kept_dice,
         selected_value: state.selected_value,
+        firstRollThrown: state.firstRollThrown
     })
 
 

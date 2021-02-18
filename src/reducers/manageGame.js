@@ -16,7 +16,8 @@ export default function manageGame(state = {
     p3:"Player 3",
     p4:"Player 4",
     num_of_players: 2,
-    isSubmitted: false
+    isSubmitted: false,
+    firstRollThrown: false,
 
     }, action) {
 
@@ -38,7 +39,8 @@ export default function manageGame(state = {
         console.log(state)
           return {
             ...state,
-            rolled_dice: Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1)
+            rolled_dice: Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1),
+            firstRollThrown: true
             };
             
            

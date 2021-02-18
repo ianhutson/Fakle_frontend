@@ -1,5 +1,5 @@
 import React from 'react'
-import Dice from '../DiceContainer'
+import Dice from './DiceContainer'
 import Title from './KeepTitle'
 import Value from './ValueTitle'
 function PlayerKeep() {

@@ -1,4 +1,4 @@
-import Dice from '../DiceContainer'
+import Dice from './DiceContainer'
 import Title from './RollBoardTitle'
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
@@ -13,7 +13,7 @@ render (){
         <div className="rolling_board">
         <Title/>
         <div className="line"></div>
-        <div className="dice_container">
+        <div className>
             <Dice settings={this.props}/>
         </div>
     </div>)

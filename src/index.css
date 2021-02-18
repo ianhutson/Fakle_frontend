@@ -39,6 +39,8 @@ code {
 
 }
 
+
+
 .footer {
   height: 15px;
   position: fixed;
@@ -381,9 +383,21 @@ table, th, td {
 }
     
 .diceContainer {
-  margin-block-start: 100 ;
-  display: 'flex';
-  flex-direction: 'row';
-  justify-content: 'center';
+  display: flex;
+  justify-content:center;
+  padding:3vw;
+  margin-right: 4%;
 }
 
+.diceContainer img {
+  height: 70px;
+  width: 70px;
+  padding: 15px 0 0 15px;
+  margin-right: .5px;
+  filter: drop-shadow(0 0 3px);
+}
+
+.dice_background_active {
+ 
+  background: linear-gradient(#5F8EC9,#2255BE) 0 0 / 80px 80px no-repeat;
+}
