@@ -16,7 +16,7 @@ render (){
             <img className="board_title" alt="title" src={process.env.PUBLIC_URL + "/roll.png"}/>
         </div>
         <div className="line"></div>
-        <div>
+        <div className="diceContainer">
         {this.props.settings.rollThrown === true && <RollableDice settings={this.props}/>} </div>
         <div className="select_value_container">
             {console.log(this.props.settings.selected_value)}

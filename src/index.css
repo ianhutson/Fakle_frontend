@@ -397,8 +397,10 @@ table, th, td {
   display: flex;
   justify-content:center;
   padding:3vw;
-  margin-right: 4%;
+  margin-top: -5%;
+  margin-right: 0%;
   background-position: center;
+  height: 75px;
 }
 
 .diceContainer img {
