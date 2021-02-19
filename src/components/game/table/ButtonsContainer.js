@@ -8,7 +8,6 @@ class ButtonsContainer extends Component {
     };    
 
 render(){
-    console.log(this.props.settings.firstRollThrown)
     const firstRollThrown = this.props.settings.firstRollThrown
     if (firstRollThrown === true) {
     return (

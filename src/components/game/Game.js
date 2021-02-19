@@ -22,6 +22,8 @@ constructor(props) {
     {
     return (
         <div className="game_container">
+            {console.log(this.props.selected_dice)}
+            {console.log(this.props.selection_array)}
                <div>
             <div className="board_container">  
             <h4 > {this.player()}'s Turn!</h4>
@@ -57,7 +59,8 @@ constructor(props) {
         fourSelected: state.fourSelected,
         fiveSelected: state.fiveSelected,
         sixSelected: state.sixSelected,
-        selection_array: state.selection_array
+        selection_array: state.selection_array,
+        selected_dice: state.selected_dice
     })
 
 

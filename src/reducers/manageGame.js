@@ -18,16 +18,10 @@ export default function manageGame(state = {
     num_of_players: 2,
     isSubmitted: false,
     firstRollThrown: false,
-    oneSelected: false,
-    twoSelected: false,
-    threeSelected: false,
-    fourSelected: false,
-    fiveSelected: false,
-    sixSelected: false,
+    selected_dice:[],
     selection_array: [],
     }, action) {
-
-      switch (action.type) {
+    switch (action.type) {
 
       case 'SUBMIT':
           const settings = { game: action.game };
@@ -49,42 +43,27 @@ export default function manageGame(state = {
             firstRollThrown: true
             };
             
-      case 'SELECT1':
-        if (this.state.oneSelected === false)
-            return {
-              ...state, oneSelected: true}
-        else return {...state, oneSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[0]]}
+      case 'SELECT':
+        const index = state.selection_array.indexOf(state.rolled_dice[action.value-1])
+        const clone_of_value_array = [state.selection_array]
+        clone_of_value_array.splice(index, 1)
+        console.log(clone_of_value_array)
 
-      case 'SELECT2':
-        if (this.state.twoSelected === false)
-            return {
-              ...state, twoSelected: true}
-        else return {...state, twoSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[1]]}
 
-      case 'SELECT3':
-        if (this.state.threeSelected === false)
-            return {
-              ...state, threeSelected: true}
-        else return {...state, threeSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[2]]}
 
-      case 'SELECT4':
-        if (this.state.fourSelected === false)
-            return {
-              ...state, fourSelected: true}
-        else return {...state, fourSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[3]]}
-      
-      case 'SELECT5':
-        if (this.state.fiveSelected === false)
-            return {
-              ...state, fiveSelected: true}
-        else return {...state, fiveSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[4]]}
+        const index2 = state.selected_dice.indexOf(action.value)
+        const clone_of_selected_array = [state.selected_dice]
+        clone_of_selected_array.splice(index, 1)
+        const includes_check = state.selected_dice.includes(action.value)
+        console.log(includes_check)
 
-      case 'SELECT6':
-        if (this.state.sixSelected === false)
-            return {
-              ...state, sixSelected: true}
-        else return {...state, sixSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[5]]}
 
+          if (includes_check === true)
+            return {...state, selected_dice: clone_of_selected_array, selection_array: clone_of_value_array}
+          else  return {
+            ...state, selected_dice: [...state.selected_dice, action.value], selection_array: [...state.selection_array, state.rolled_dice[action.value - 1]]}
+          
+        
 
         case 'KEEP':
           return{
