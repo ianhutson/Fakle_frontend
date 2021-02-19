@@ -73,12 +73,13 @@ export default function manageGame(state = {
         
 
         case 'KEEP':
-     
+          const kept_dice_clone = state.kept_dice.concat(state.selection_array)
+          console.log(state.selected_dice.length)
           return{
             ...state, 
             keep_value: state.selected_value + state.keep_value, 
-            kept_dice: state.selection_array, 
-            rollable_dice: state.rollable_dice - state.selection_array.length, 
+            kept_dice: kept_dice_clone, 
+            rollable_dice: state.rollable_dice - state.selected_dice.length, 
             rollPhase: true, 
             selected_value: 0,
             selected_dice: [],

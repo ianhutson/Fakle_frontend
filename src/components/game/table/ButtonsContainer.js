@@ -12,7 +12,7 @@ render(){
     if (rollPhase === true) {
     return (
         <div>
-            <button onClick={this.props.settings.settings.roll} className="game_buttons" >Roll Dice</button>
+            <button onClick={this.props.settings.settings.roll} className="game_buttons" >Roll Dice ({this.props.settings.rollable_dice})</button>
             <button onClick={this.props.settings.settings.end} className="game_buttons">End Turn</button>
         </div>
         )

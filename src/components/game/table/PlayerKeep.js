@@ -23,7 +23,7 @@ class PlayerKeep extends Component{
             <img className="board_title" alt="title" src={process.env.PUBLIC_URL + "/value.png"}/>
         </div>
                 <div className="value_container">
-                    {console.log(this.props.settings.keep_value)}
+      
                 <div className="value">{this.props.settings.keep_value}</div>
                 </div>
             </div>

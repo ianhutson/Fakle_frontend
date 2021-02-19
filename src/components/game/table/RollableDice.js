@@ -34,7 +34,7 @@ class RollableDice extends Component{
    
   return (
     <div>
-      {console.log(this.props.settings.settings.rollThrown)}
+
     <div class="diceContainer">
     
     {dice}

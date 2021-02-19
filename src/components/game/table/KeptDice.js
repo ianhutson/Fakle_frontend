@@ -16,7 +16,7 @@ class KeptDice extends Component{
     }
     render() {
     const dice = []
-    console.log(this.props.settings.settings.kept_dice.length)
+
     for (let i = 1; i <= this.props.settings.settings.kept_dice.length; i++) {    
       dice.push(
         <div>

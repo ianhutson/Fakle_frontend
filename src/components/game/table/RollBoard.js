@@ -19,7 +19,7 @@ render (){
         <div className="diceContainer">
         {this.props.settings.rollThrown === true && <RollableDice settings={this.props}/>} </div>
         <div className="select_value_container">
-            {console.log(this.props.settings.selected_value)}
+   
         <div className="value">{this.props.settings.selected_value}</div>
 
         </div>

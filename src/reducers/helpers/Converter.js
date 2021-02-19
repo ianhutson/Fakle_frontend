@@ -51,6 +51,28 @@ export const convertToValue = (x) => {
     else if (split === '4, 4, 4, 5, 5, 5') return 250
     else if (split === '4, 4, 4, 6, 6, 6') return 250
     else if (split === '5, 5, 5, 6, 6, 6') return 250
+    // four of a kind
+    else if (split === '1, 1, 1, 1') return 100
+    else if (split === '2, 2, 2, 2') return 100
+    else if (split === '3, 3, 3, 3') return 100
+    else if (split === '4, 4, 4, 4') return 100
+    else if (split === '5, 5, 5, 5') return 100
+    else if (split === '6, 6, 6, 6') return 100
+    // four of a kind one offs
+    else if (split === '1, 1, 1, 1, 5') return 105
+    else if (split === '2, 2, 2, 2, 5') return 105
+    else if (split === '3, 3, 3, 3, 5') return 105
+    else if (split === '4, 4, 4, 4, 5') return 105
+    else if (split === '5, 6, 6, 6, 6') return 105
+    else if (split === '1, 2, 2, 2, 2') return 110
+    else if (split === '1, 3, 3, 3, 3') return 110
+    else if (split === '1, 4, 4, 4, 4') return 110
+    else if (split === '1, 5, 5, 5, 5') return 110
+    else if (split === '1, 6, 6, 6, 6') return 110
+    else if (split === '1, 2, 2, 2, 2, 5') return 115
+    else if (split === '1, 3, 3, 3, 3, 5') return 115
+    else if (split === '1, 4, 4, 4, 4, 5') return 115
+    else if (split === '1, 5, 6, 6, 6, 6') return 115
     // 3 pairs
     else if (split === '1, 1, 2, 2, 3, 3') return 150
     else if (split === '1, 1, 2, 2, 4, 4') return 150
