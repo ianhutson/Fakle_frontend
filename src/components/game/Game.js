@@ -22,8 +22,6 @@ constructor(props) {
     {
     return (
         <div className="game_container">
-            {console.log(this.props.selected_dice)}
-            {console.log(this.props.selection_array)}
                <div>
             <div className="board_container">  
             <h4 > {this.player()}'s Turn!</h4>
@@ -41,7 +39,8 @@ constructor(props) {
     }
 }
 
-    const mapStateToProps = state => ({p1_score: state.p1_score,
+    const mapStateToProps = state => ({
+        p1_score: state.p1_score,
         p2_score: state.p2_score, 
         p3_score: state.p3_score, 
         p4_score: state.p4_score, 
@@ -52,15 +51,10 @@ constructor(props) {
         rolled_dice: state.rolled_dice,
         kept_dice: state.kept_dice,
         selected_value: state.selected_value,
-        firstRollThrown: state.firstRollThrown,
-        oneSelected: state.oneSelected,
-        twoSelected: state.twoSelected,
-        threeSelected: state.threeSelected,
-        fourSelected: state.fourSelected,
-        fiveSelected: state.fiveSelected,
-        sixSelected: state.sixSelected,
+        rollPhase: state.rollPhase,
         selection_array: state.selection_array,
-        selected_dice: state.selected_dice
+        selected_dice: state.selected_dice,
+        rollThrown: state.rollThrown
     })
 
 

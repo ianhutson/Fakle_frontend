@@ -154,7 +154,7 @@ h6{
   text-align: center;
   background-color: #9A0000;
   margin:auto;
-  margin-top:1%;
+  margin-top:%;
   height: 30px;
   width: 100px;
   border-style: solid;
@@ -163,6 +163,17 @@ h6{
   border-radius: 25px;
 }
 
+.select_value_container{
+  text-align: center;
+  background-color: #9A0000;
+  margin:auto;
+  height: 30px;
+  width: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 25px;
+}
 .keep_container{
   height: 65%;
 }
@@ -387,16 +398,20 @@ table, th, td {
   justify-content:center;
   padding:3vw;
   margin-right: 4%;
+  background-position: center;
 }
 
 .diceContainer img {
   height: 70px;
   width: 70px;
-  padding: 15px 0 0 15px;
+  padding: 4px 4px 4px 4px;
   margin-right: .5px;
   filter: drop-shadow(0 0 3px);
 }
 
 .dice_background_active {
   background: linear-gradient(#5F8EC9,#2255BE) 0 0 / 80px 80px no-repeat;
+}
+.dice_background {
+  background: green / 80px 80px no-repeat;
 }

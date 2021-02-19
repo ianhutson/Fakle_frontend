@@ -42,7 +42,6 @@ class PregameInput extends Component {
     },
     () => {
       console.log('submitted')
-      console.log(this.state)
     })
   }
 

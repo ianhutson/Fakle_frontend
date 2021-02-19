@@ -1,3 +1,4 @@
+import {convertToValue} from './helpers/Converter'
 
 export default function manageGame(state = {
     p1_score: 0,
@@ -17,9 +18,10 @@ export default function manageGame(state = {
     p4:"Player 4",
     num_of_players: 2,
     isSubmitted: false,
-    firstRollThrown: false,
+    rollPhase: true,
     selected_dice:[],
     selection_array: [],
+    rollThrown: false,
     }, action) {
     switch (action.type) {
 
@@ -36,39 +38,52 @@ export default function manageGame(state = {
             }
 
       case 'ROLL':
-        console.log(state)
+ 
           return {
             ...state,
             rolled_dice: Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1),
-            firstRollThrown: true
+            rollPhase: false, 
+            rollThrown: true
             };
             
       case 'SELECT':
-        const index = state.selection_array.indexOf(state.rolled_dice[action.value-1])
+        const index_values = state.selection_array.indexOf(state.rolled_dice[action.value-1])
         const clone_of_value_array = [state.selection_array]
-        clone_of_value_array.splice(index, 1)
-        console.log(clone_of_value_array)
+        clone_of_value_array.splice(index_values, 1)
+  
 
-
-
-        const index2 = state.selected_dice.indexOf(action.value)
+        const index_ids = state.selected_dice.indexOf(action.value)
         const clone_of_selected_array = [state.selected_dice]
-        clone_of_selected_array.splice(index, 1)
+        clone_of_selected_array.splice(index_ids, 1)
         const includes_check = state.selected_dice.includes(action.value)
-        console.log(includes_check)
-
 
           if (includes_check === true)
-            return {...state, selected_dice: clone_of_selected_array, selection_array: clone_of_value_array}
+            return {
+              ...state, 
+              selected_dice: clone_of_selected_array, 
+              selection_array: clone_of_value_array, 
+              selected_value: convertToValue(clone_of_value_array)}
           else  return {
-            ...state, selected_dice: [...state.selected_dice, action.value], selection_array: [...state.selection_array, state.rolled_dice[action.value - 1]]}
+            ...state, 
+            selected_value: convertToValue([...state.selection_array, state.rolled_dice[action.value - 1]]), 
+            selected_dice: [...state.selected_dice, action.value], 
+            selection_array: [...state.selection_array, 
+            state.rolled_dice[action.value - 1]]}
           
         
 
         case 'KEEP':
+     
           return{
-
-        };
+            ...state, 
+            keep_value: state.selected_value + state.keep_value, 
+            kept_dice: state.selection_array, 
+            rollable_dice: state.rollable_dice - state.selection_array.length, 
+            rollPhase: true, 
+            selected_value: 0,
+            selected_dice: [],
+            selection_array: [],
+            rollThrown: false};
 
         case 'END':
           return{

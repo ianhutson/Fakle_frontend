@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
-import {convertToValue} from './Converter'
+
 const dicearr = [
   '/1.png',
   '/2.png',
@@ -10,7 +10,7 @@ const dicearr = [
   '/6.png',
 ]
 
-class DiceContainer extends Component{
+class RollableDice extends Component{
   constructor(props) {
       super(props);
     }
@@ -22,8 +22,6 @@ class DiceContainer extends Component{
 
     render() {
     const dice = []
-    
-    
     for (let i = 1; i <= this.props.settings.settings.rollable_dice; i++) {    
       const include_check = this.props.settings.settings.selected_dice.includes(i)
       dice.push(
@@ -33,20 +31,22 @@ class DiceContainer extends Component{
         </div>  
       )
     }
+   
   return (
     <div>
+      {console.log(this.props.settings.settings.rollThrown)}
     <div class="diceContainer">
-    {dice}
     
+    {dice}
+      
+    </div>
    
-  </div><div className="value_container">
-  <div className="value">{convertToValue(this.props.settings.settings.selection_array)}</div>
-  </div></div>
+ </div>
   )
 }
 }
 
     
 
-export default connect() (DiceContainer)
+export default connect() (RollableDice)
 
