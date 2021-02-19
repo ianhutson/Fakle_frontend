@@ -18,7 +18,13 @@ export default function manageGame(state = {
     num_of_players: 2,
     isSubmitted: false,
     firstRollThrown: false,
-
+    oneSelected: false,
+    twoSelected: false,
+    threeSelected: false,
+    fourSelected: false,
+    fiveSelected: false,
+    sixSelected: false,
+    selection_array: [],
     }, action) {
 
       switch (action.type) {
@@ -43,18 +49,49 @@ export default function manageGame(state = {
             firstRollThrown: true
             };
             
-           
-  
-        case 'KEEP':
-          const keep = { game: action.keep };
+      case 'SELECT1':
+        if (this.state.oneSelected === false)
+            return {
+              ...state, oneSelected: true}
+        else return {...state, oneSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[0]]}
 
+      case 'SELECT2':
+        if (this.state.twoSelected === false)
+            return {
+              ...state, twoSelected: true}
+        else return {...state, twoSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[1]]}
+
+      case 'SELECT3':
+        if (this.state.threeSelected === false)
+            return {
+              ...state, threeSelected: true}
+        else return {...state, threeSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[2]]}
+
+      case 'SELECT4':
+        if (this.state.fourSelected === false)
+            return {
+              ...state, fourSelected: true}
+        else return {...state, fourSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[3]]}
+      
+      case 'SELECT5':
+        if (this.state.fiveSelected === false)
+            return {
+              ...state, fiveSelected: true}
+        else return {...state, fiveSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[4]]}
+
+      case 'SELECT6':
+        if (this.state.sixSelected === false)
+            return {
+              ...state, sixSelected: true}
+        else return {...state, sixSelected: false, selection_array: [...state.selection_array, this.state.rolled_dice[5]]}
+
+
+        case 'KEEP':
           return{
 
         };
 
         case 'END':
-          const end = { game: action.end };
-
           return{
             ...state,
 

@@ -29,6 +29,12 @@ const mapDispatchToProps = dispatch => ({
   roll: roll => dispatch({type: 'ROLL', roll}),
   keep: keep => dispatch({type: 'KEEP', keep}),
   end: end => dispatch({type: 'END', end}),
+  select1: select => dispatch({type: 'SELECT1', select}),
+  select2: select => dispatch({type: 'SELECT2', select}),
+  select3: select => dispatch({type: 'SELECT3', select}),
+  select4: select => dispatch({type: 'SELECT4', select}),
+  select5: select => dispatch({type: 'SELECT5', select}),
+  select6: select => dispatch({type: 'SELECT6', select}),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PregameContainer)
