@@ -24,7 +24,6 @@ constructor(props) {
         <div className="game_container">
                <div>
             <div className="board_container">  
-            {console.log(this.props)}
             <h4 > {this.player()}'s Turn!</h4>
             <h6 className="turn">TURN {this.props.store.current_turn} </h6>
             <br></br><br></br>
