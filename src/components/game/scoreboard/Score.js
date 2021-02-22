@@ -7,7 +7,6 @@ class Score extends Component{
         }
         render(){
     return (
-        <div>
             <div className="score_container">
             <div className="totals_container">
                <h1> Totals: </h1><br></br>
@@ -41,7 +40,6 @@ class Score extends Component{
               </tr>
             </table>
         </div>
-    </div> 
     </div> 
     )
 }

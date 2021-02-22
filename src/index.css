@@ -278,10 +278,11 @@ input{
   border-width: 10px;
   border-color: #9A0000;
   background-color: white;
-  margin-top: 5%;
-  margin-left: 80%;
+  margin-top: 1.5%;
+  margin-left:20%;
   color: black
 }
+
 .totals{
   font-family: casino;
 } 
@@ -343,6 +344,8 @@ input{
 .game_buttons:active {
   cursor: pointer; 
 }
+
+
 
 .game_buttons {
   font-size: 20px;
