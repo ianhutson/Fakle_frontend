@@ -33,7 +33,7 @@ constructor(props) {
             <ButtonsContainer settings={this.props}/>
             </div>
         </div>
-            <Score settings={this.props.settings}/>
+            <Score settings={this.props}/>
         </div>
     )
     }
@@ -54,7 +54,8 @@ constructor(props) {
         rollPhase: state.rollPhase,
         selection_array: state.selection_array,
         selected_dice: state.selected_dice,
-        rollThrown: state.rollThrown
+        rollThrown: state.rollThrown,
+        fakle: false
     })
 
 

@@ -1,5 +1,4 @@
-import {convertToValue} from './helpers/Converter'
-
+import combinations from './helpers/combinations'
 export default function manageGame(state = {
     p1_score: 0,
     p2_score: 0, 
@@ -10,7 +9,7 @@ export default function manageGame(state = {
     keep_value: 0,
     rollable_dice: 6,
     kept_dice: [],
-    rolled_dice: [1, 2, 3, 4, 5, 6],
+    rolled_dice: [],
     selected_value: 0,
     p1:"Player 1",
     p2:"Player 2",
@@ -22,6 +21,7 @@ export default function manageGame(state = {
     selected_dice:[],
     selection_array: [],
     rollThrown: false,
+    fakle: false
     }, action) {
     switch (action.type) {
 
@@ -38,10 +38,11 @@ export default function manageGame(state = {
             }
 
       case 'ROLL':
- 
+          const rolled_dice_holder = Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1)
+          if (rolled_dice_holder.sort)
           return {
             ...state,
-            rolled_dice: Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1),
+            rolled_dice: rolled_dice_holder,
             rollPhase: false, 
             rollThrown: true
             };
@@ -57,15 +58,19 @@ export default function manageGame(state = {
         clone_of_selected_array.splice(index_ids, 1)
         const includes_check = state.selected_dice.includes(action.value)
 
+      
+        const currentValue = [...state.selection_array, state.rolled_dice[action.value - 1]]
+
+            console.log(currentValue.sort().join(', '))
           if (includes_check === true)
             return {
               ...state, 
               selected_dice: clone_of_selected_array, 
               selection_array: clone_of_value_array, 
-              selected_value: convertToValue(clone_of_value_array)}
+              selected_value: combinations[clone_of_selected_array.join(', ').sort()]}
           else  return {
             ...state, 
-            selected_value: convertToValue([...state.selection_array, state.rolled_dice[action.value - 1]]), 
+            selected_value: combinations[currentValue.sort().join(', ')], 
             selected_dice: [...state.selected_dice, action.value], 
             selection_array: [...state.selection_array, 
             state.rolled_dice[action.value - 1]]}
@@ -87,9 +92,32 @@ export default function manageGame(state = {
             rollThrown: false};
 
         case 'END':
+          const playerNum = state.current_player + 1
+          if(playerNum > state.num_of_players)
+            playerNum = 1
+
+          const scoreHolder = [0, 0, 0, 0]
+          if (state.current_player === 1) scoreHolder[0] = state.p1_score + state.keep_value 
+          else if (state.current_player === 2) scoreHolder[1] = state.p2_score + state.keep_value
+          else if (state.current_player === 3) scoreHolder[2] = state.p2_score + state.keep_value
+          else scoreHolder[3] = state.p2_score + state.keep_value
           return{
             ...state,
-
+            rollPhase: false,
+            rollThrown: false,
+            current_player: playerNum,
+            current_turn: state.current_turn + 1,
+            keep_value: 0,
+            rollable_dice: 6,
+            kept_dice: [],
+            rolled_dice: [],
+            selected_value: 0,
+            selected_dice:[],
+            selection_array: [],
+            p1_score: scoreHolder[0],
+            p2_score: scoreHolder[1], 
+            p3_score: scoreHolder[2], 
+            p4_score: scoreHolder[3], 
           };
 
         default:

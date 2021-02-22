@@ -256,7 +256,7 @@ input{
 
 .board_container{
   padding: 15px;
-  height: 1000px;
+  height: 950px;
   width: 650px;
   background-color: green;
   text-align: center;
@@ -272,22 +272,26 @@ input{
 
 .score_container{
   padding: 15px;
-  height: 600px;
-  width: 500px;
+  height: fit-content;
+  width: 600px;
   border-style: solid;
   border-width: 10px;
   border-color: #9A0000;
   background-color: white;
-  margin-top: 1%;
-  margin-left: 30%;
+  margin-top: 5%;
+  margin-left: 80%;
   color: black
 }
+.totals{
+  font-family: casino;
+  
+} 
 
 .rolling_board{
   padding: 15px;
   text-align: center;
   margin: auto;
-  height: 300px;
+  height: 325px;
   width: 500px;
   border-style: solid;
   border-width: 5px;
@@ -296,7 +300,7 @@ input{
 }
 
 .board_title{
-  width: 80%;
+  width: 60%;
 }
 
 .player_keep{
@@ -304,7 +308,7 @@ input{
   text-align: center;
   margin:auto;
   margin-bottom: 5%;
-  height: 425px;
+  height: 325px;
   width: 500px;
   border-style: solid;
   border-width: 5px;
@@ -347,7 +351,7 @@ input{
   margin-top:2%;
   margin-left: 1%;
   margin-right:  1%;
-  width: 25%;
+  width: 35%;
   padding:5px;
 }
 
@@ -392,10 +396,10 @@ table, th, td {
   display: flex;
   justify-content:center;
   padding:3vw;
-  margin-top: -5%;
+  margin-top: -10%;
   margin-right: 0%;
   background-position: center;
-  height: 75px;
+  height: 55px;
 }
 
 .diceContainer img {
@@ -409,6 +413,9 @@ table, th, td {
 .dice_background_active {
   background: linear-gradient(#5F8EC9,#2255BE) 0 0 / 80px 80px no-repeat;
 }
+
 .dice_background {
   background: green / 80px 80px no-repeat;
 }
+
+
