@@ -11,7 +11,7 @@ render(){
     const rollPhase = this.props.settings.rollPhase
     if(this.props.settings.fakle === true)
     return (<div>
-                <h1>You Fakled!</h1>
+                <div className="fakle_noto">You Fakled!</div>
                 <button onClick={this.props.settings.settings.end} className="game_buttons">End Turn</button>
             </div>)
     else if (rollPhase === true && this.props.settings.fakle === false) {

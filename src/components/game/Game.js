@@ -55,7 +55,7 @@ constructor(props) {
         selection_array: state.selection_array,
         selected_dice: state.selected_dice,
         rollThrown: state.rollThrown,
-        fakle: false
+        fakle: state.fakle
     })
 
 

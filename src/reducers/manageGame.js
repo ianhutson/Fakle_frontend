@@ -39,9 +39,22 @@ export default function manageGame(state = {
 
       case 'ROLL':
           const rolled_dice_holder = Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1)
-          if (rolled_dice_holder.sort)
+          console.log(rolled_dice_holder)
+          const rolled_dice_holder_clone = []
+          rolled_dice_holder.forEach(num => rolled_dice_holder_clone.push(num))
+          rolled_dice_holder_clone.sort()
+          let eff = false
+          console.log(rolled_dice_holder_clone.join(', '))
+          if (rolled_dice_holder_clone.join(', ') in combinations === false 
+            && rolled_dice_holder_clone.splice(-1, 1).join(', ') in combinations === false 
+            && rolled_dice_holder_clone.splice(-1, 2).join(', ') in combinations === false 
+            && rolled_dice_holder_clone.splice(-1, 3).join(', ') in combinations === false 
+            && rolled_dice_holder_clone.splice(-1, 4).join(', ') in combinations === false 
+            && rolled_dice_holder_clone.splice(-1, 5).join(', ') in combinations === false)
+            eff = true
           return {
             ...state,
+            fakle: eff,
             rolled_dice: rolled_dice_holder,
             rollPhase: false, 
             rollThrown: true
@@ -59,18 +72,18 @@ export default function manageGame(state = {
         const includes_check = state.selected_dice.includes(action.value)
 
       
-        const currentValue = [...state.selection_array, state.rolled_dice[action.value - 1]]
-
-            console.log(currentValue.sort().join(', '))
+        const currentValue = [...state.selection_array, state.rolled_dice[action.value - 1]].sort().join(', ')
+        
+            console.log(currentValue)
           if (includes_check === true)
             return {
               ...state, 
               selected_dice: clone_of_selected_array, 
               selection_array: clone_of_value_array, 
-              selected_value: combinations[clone_of_selected_array.join(', ').sort()]}
+              selected_value: combinations[clone_of_selected_array.sort().join(', ')]}
           else  return {
             ...state, 
-            selected_value: combinations[currentValue.sort().join(', ')], 
+            selected_value: combinations[currentValue], 
             selected_dice: [...state.selected_dice, action.value], 
             selection_array: [...state.selection_array, 
             state.rolled_dice[action.value - 1]]}
@@ -79,12 +92,15 @@ export default function manageGame(state = {
 
         case 'KEEP':
           const kept_dice_clone = state.kept_dice.concat(state.selection_array)
+          let rollableDice = 0
+          if (kept_dice_clone.length === 6) rollableDice = 6
+          else rollableDice = state.rollable_dice - state.selected_dice.length
           console.log(state.selected_dice.length)
           return{
             ...state, 
             keep_value: state.selected_value + state.keep_value, 
             kept_dice: kept_dice_clone, 
-            rollable_dice: state.rollable_dice - state.selected_dice.length, 
+            rollable_dice: rollableDice, 
             rollPhase: true, 
             selected_value: 0,
             selected_dice: [],
@@ -95,15 +111,18 @@ export default function manageGame(state = {
           const playerNum = state.current_player + 1
           if(playerNum > state.num_of_players)
             playerNum = 1
-
+          
           const scoreHolder = [0, 0, 0, 0]
-          if (state.current_player === 1) scoreHolder[0] = state.p1_score + state.keep_value 
-          else if (state.current_player === 2) scoreHolder[1] = state.p2_score + state.keep_value
-          else if (state.current_player === 3) scoreHolder[2] = state.p2_score + state.keep_value
-          else scoreHolder[3] = state.p2_score + state.keep_value
+          if(state.fakle === false)
+          if (state.current_player === 1) scoreHolder[0] = state.keep_value 
+          else if (state.current_player === 2) scoreHolder[1] = state.keep_value
+          else if (state.current_player === 3) scoreHolder[2] = state.keep_value
+          else scoreHolder[3] = state.keep_value
+    
           return{
             ...state,
-            rollPhase: false,
+            fakle: false,
+            rollPhase: true,
             rollThrown: false,
             current_player: playerNum,
             current_turn: state.current_turn + 1,
@@ -114,10 +133,10 @@ export default function manageGame(state = {
             selected_value: 0,
             selected_dice:[],
             selection_array: [],
-            p1_score: scoreHolder[0],
-            p2_score: scoreHolder[1], 
-            p3_score: scoreHolder[2], 
-            p4_score: scoreHolder[3], 
+            p1_score: state.p1_score + scoreHolder[0],
+            p2_score: state.p2_score + scoreHolder[1], 
+            p3_score: state.p3_score + scoreHolder[2], 
+            p4_score: state.p4_score + scoreHolder[3], 
           };
 
         default:
