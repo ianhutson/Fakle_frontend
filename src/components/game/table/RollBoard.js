@@ -16,13 +16,14 @@ render (){
         </div>
         <div className="line"></div>
         <div className="diceContainer">
-        {this.props.settings.rollThrown === true && <RollableDice settings={this.props}/>} </div>
+            {console.log(this.props)}
+        {this.props.store.rollThrown === true && <RollableDice store={this.props.store}/>} </div>
         <div><div className="line"></div>
             <img className="board_title" alt="title" src={process.env.PUBLIC_URL + "/selected_value.png"}/>
             </div>
                 
         <div className="select_value_container">
-        <div className="value">{this.props.settings.selected_value}</div>
+        <div className="value">{this.props.store.selected_value}</div>
 
         </div>
     </div>)

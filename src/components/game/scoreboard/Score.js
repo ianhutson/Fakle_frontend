@@ -13,16 +13,16 @@ class Score extends Component{
                 <div className="totals">
                 <table>
                 <tr>
-                <th>{this.props.settings.settings.p1}</th> 
-                <th>{this.props.settings.settings.p2}</th>
-                <th>{this.props.settings.settings.p3}</th>
-                <th>{this.props.settings.settings.p4}</th>
+                <th>{this.props.store.p1}</th> 
+                <th>{this.props.store.p2}</th>
+                <th>{this.props.store.p3}</th>
+                <th>{this.props.store.p4}</th>
                 </tr>
                 <tr>
-                <th>{this.props.settings.p1_score}</th>
-                <th>{this.props.settings.p2_score}</th>
-                <th>{this.props.settings.p3_score}</th>
-                <th>{this.props.settings.p4_score}</th>
+                <th>{this.props.store.p1_score}</th>
+                <th>{this.props.store.p2_score}</th>
+                <th>{this.props.store.p3_score}</th>
+                <th>{this.props.store.p4_score}</th>
                 </tr>
                 </table>
             </div>

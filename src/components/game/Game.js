@@ -11,10 +11,10 @@ constructor(props) {
     
     }
     player(){ let x
-        if (this.props.current_player === 1) x = this.props.settings.p1
-        else if(this.props.current_player === 2) x = this.props.settings.p2
-        else if(this.props.current_player === 3) x = this.props.settings.p3
-        else x = this.props.settings.p4
+        if (this.props.store.current_player === 1) x = this.props.store.p1
+        else if(this.props.store.current_player === 2) x = this.props.store.p2
+        else if(this.props.store.current_player === 3) x = this.props.store.p3
+        else x = this.props.store.p4
         return x;
     }
 
@@ -24,42 +24,20 @@ constructor(props) {
         <div className="game_container">
                <div>
             <div className="board_container">  
+            {console.log(this.props)}
             <h4 > {this.player()}'s Turn!</h4>
-            <h6 className="turn">TURN {this.props.current_turn} </h6>
+            <h6 className="turn">TURN {this.props.store.current_turn} </h6>
             <br></br><br></br>
-            <RollBoard settings={this.props}/>
+            <RollBoard store={this.props.store}/>
             <br></br>
-            <PlayerKeep settings={this.props}/>
-            <ButtonsContainer settings={this.props}/>
+            <PlayerKeep store={this.props.store}/>
+            <ButtonsContainer store={this.props.store}/>
             </div>
         </div>
-            <Score settings={this.props}/>
+            <Score store={this.props.store}/>
         </div>
     )
     }
 }
 
-    const mapStateToProps = state => ({
-        p1_score: state.p1_score,
-        p2_score: state.p2_score, 
-        p3_score: state.p3_score, 
-        p4_score: state.p4_score, 
-        current_player: state.current_player,
-        current_turn: state.current_turn,
-        keep_value: state.keep_value,
-        rollable_dice: state.rollable_dice,
-        rolled_dice: state.rolled_dice,
-        kept_dice: state.kept_dice,
-        selected_value: state.selected_value,
-        rollPhase: state.rollPhase,
-        selection_array: state.selection_array,
-        selected_dice: state.selected_dice,
-        rollThrown: state.rollThrown,
-        fakle: state.fakle
-    })
-
-
-    
-
-    
-    export default connect(mapStateToProps)(Game)
+export default connect()(Game)

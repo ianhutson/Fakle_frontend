@@ -1,5 +1,6 @@
 import KeptDice from './KeptDice'
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class PlayerKeep extends Component{
     constructor(props) {
@@ -14,7 +15,7 @@ class PlayerKeep extends Component{
             </div>
                 <div className="line"></div>
                 <div className="keep_container">
-                    <KeptDice settings={this.props}/>
+                    <KeptDice store={this.props.store}/>
                 </div>
                 <div className="line"></div>
         
@@ -23,7 +24,7 @@ class PlayerKeep extends Component{
         </div>
                 <div className="value_container">
       
-                <div className="value">{this.props.settings.keep_value}</div>
+                <div className="value">{this.props.store.keep_value}</div>
                 </div>
             </div>
         </div>
@@ -31,4 +32,4 @@ class PlayerKeep extends Component{
 }
 }
 
-export default PlayerKeep
+export default connect() (PlayerKeep)
