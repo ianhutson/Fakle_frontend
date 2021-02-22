@@ -45,13 +45,13 @@ export default function manageGame(state = {
           rolled_dice_holder_clone.sort()
           console.log(rolled_dice_holder_clone)
           let eff = false
-          console.log(rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 1)[0])
-          if (rolled_dice_holder_clone.join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 5).join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 4).join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 3).join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 2).join(', ') in combinations === false 
-            && "'"+rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 1)[0]+"'" in combinations === false)
+          console.log(rolled_dice_holder_clone.splice(0, rolled_dice_holder_clone.length - 3))
+          // if (rolled_dice_holder_clone.join(', ') in combinations === false 
+          //   && rolled_dice_holder_clone.splice(0, rolled_dice_holder_clone.length - 5).join(', ') in combinations === false 
+          //   && rolled_dice_holder_clone.splice(0, rolled_dice_holder_clone.length - 4).join(', ') in combinations === false 
+          //   && rolled_dice_holder_clone.splice(0, rolled_dice_holder_clone.length - 3).join(', ') in combinations === false 
+          //   && rolled_dice_holder_clone.splice(0, rolled_dice_holder_clone.length - 2).join(', ') in combinations === false 
+          //   && "'"+rolled_dice_holder_clone.splice(0, rolled_dice_holder_clone.length - 1)[0]+"'" in combinations === false)
             eff = true
           return {
             ...state,
