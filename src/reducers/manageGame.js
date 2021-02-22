@@ -39,18 +39,19 @@ export default function manageGame(state = {
 
       case 'ROLL':
           const rolled_dice_holder = Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1)
-          console.log(rolled_dice_holder)
+          
           const rolled_dice_holder_clone = []
           rolled_dice_holder.forEach(num => rolled_dice_holder_clone.push(num))
           rolled_dice_holder_clone.sort()
+          console.log(rolled_dice_holder_clone)
           let eff = false
-          console.log(rolled_dice_holder_clone.join(', '))
+          console.log(rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 1)[0])
           if (rolled_dice_holder_clone.join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(-1, 1).join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(-1, 2).join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(-1, 3).join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(-1, 4).join(', ') in combinations === false 
-            && rolled_dice_holder_clone.splice(-1, 5).join(', ') in combinations === false)
+            && rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 5).join(', ') in combinations === false 
+            && rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 4).join(', ') in combinations === false 
+            && rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 3).join(', ') in combinations === false 
+            && rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 2).join(', ') in combinations === false 
+            && "'"+rolled_dice_holder_clone.splice(rolled_dice_holder_clone.length - 1)[0]+"'" in combinations === false)
             eff = true
           return {
             ...state,
@@ -73,15 +74,13 @@ export default function manageGame(state = {
 
       
         const currentValue = [...state.selection_array, state.rolled_dice[action.value - 1]].sort().join(', ')
-        
-            console.log(currentValue)
           if (includes_check === true)
             return {
               ...state, 
               selected_dice: clone_of_selected_array, 
               selection_array: clone_of_value_array, 
               selected_value: combinations[clone_of_selected_array.sort().join(', ')]}
-          else  return {
+          else return {
             ...state, 
             selected_value: combinations[currentValue], 
             selected_dice: [...state.selected_dice, action.value], 
@@ -93,13 +92,16 @@ export default function manageGame(state = {
         case 'KEEP':
           const kept_dice_clone = state.kept_dice.concat(state.selection_array)
           let rollableDice = 0
-          if (kept_dice_clone.length === 6) rollableDice = 6
+          let keptDice = kept_dice_clone
+          if (kept_dice_clone.length === 6) {
+          rollableDice = 6;
+          keptDice = [];}
           else rollableDice = state.rollable_dice - state.selected_dice.length
           console.log(state.selected_dice.length)
           return{
             ...state, 
             keep_value: state.selected_value + state.keep_value, 
-            kept_dice: kept_dice_clone, 
+            kept_dice: keptDice, 
             rollable_dice: rollableDice, 
             rollPhase: true, 
             selected_value: 0,
@@ -108,7 +110,7 @@ export default function manageGame(state = {
             rollThrown: false};
 
         case 'END':
-          const playerNum = state.current_player + 1
+          let playerNum = state.current_player + 1
           if(playerNum > state.num_of_players)
             playerNum = 1
           
