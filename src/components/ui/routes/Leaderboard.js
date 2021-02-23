@@ -7,8 +7,8 @@ const Leaderboard = () => {
     return (
         <div>
             <Header/>
-        <div className="score_container" style={{height: "300px"}}>
-        <h1>leaderboard placeholder</h1>
+        <div className="pregame_container" style={{height: 'fit-content'}}>
+        <h1>leaderboard placeholder</h1><br></br>
             <HomeButton style={{}}/>
         </div>
             <Footer/>

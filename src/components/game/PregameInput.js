@@ -50,9 +50,10 @@ class PregameInput extends Component {
  
     for (let i = 1; i <= this.state.num_of_players; i++) {
       let defaults = ['Player 1', 'Player 2', 'Player 3', 'Player 4', ]
+      let colors = ['red', 'blue', 'pink', 'green' ]
       inputs.push(
         <div>
-        <input onChange={(event)=> this.handleChange(event, i)} type="pregame" className={'p'+i} defaultValue={defaults[i-1]} />
+        <input onChange={(event)=> this.handleChange(event, i)} type="pregame" className={colors[i-1]} defaultValue={defaults[i-1]} />
         <br></br><br></br>
         </div>  
       )

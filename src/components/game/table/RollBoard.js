@@ -2,11 +2,7 @@ import RollableDice from './RollableDice'
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-class RollBoard extends Component {
-    constructor(props){ 
-      super(props) 
-    }
-    
+class RollBoard extends Component {    
 render (){
     return (
         

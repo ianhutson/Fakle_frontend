@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react';
 import Header from '../Header'
 import Footer from '../Footer'
 import HomeButton from '../HomeButton'
+import { connect } from 'react-redux'
 
-const Rules = () => {
+class Rules extends Component{
+    render(){
     return (<div>
-        <Header/>
+        <Header store={this.props}/>
         <div className="pregame_container" style={{width: "80%", marginBottom: "5%"}}>
             <h2 style={{textDecoration: "underline"}}>Game Summary</h2>
-            <div style={{fontFamily: "lemon"}}>
-<h1>OBJECT OF THE GAME:</h1>
+            <div className="rules" style={{fontFamily: "lemon"}}>
+<h1 style={{textAlign:'left', marginLeft:'1%'}}>OBJECT OF THE GAME:</h1>
 <h5 className="rules">The object of the game of Fakle is to score a minimum of 1,000 points.</h5>
 
-<h1>NUMBER OF PLAYERS:</h1>
+<h1 style={{textAlign:'left', marginLeft:'1%'}}>NUMBER OF PLAYERS:</h1>
 <h5 className="rules">Fakle can be played by 2-4 players.</h5>
 
-<h1>HOW TO PLAY:</h1>
+<h1 style={{textAlign:'left', marginLeft:'1%'}}>HOW TO PLAY:</h1>
 <h5 className="rules">
 The following Fakle rules are the most commonly used, but there are numerous variations to choose from. Before the game begins, players should establish which rules or variations will be used. Our scoring summary chart makes this process easy and provides for endless variety in your Fakle games!
 <br></br><br></br>
@@ -31,7 +33,7 @@ If a player scores no points on a roll, this is known as a Fakle. The player may
 <br></br><br></br>
 At the end of a player’s turn, any points they have scored are written down and the dice are passed to the next player.
 </h5>
-<h1>SCORING:</h1>
+<h1 style={{textAlign:'left', marginLeft:'1%'}}> SCORING:</h1>
 <h5 className="rules">
 1	10 points<br></br>
 5	5 points<br></br>
@@ -52,15 +54,15 @@ Sometimes a single roll will provide multiple ways to score. For example, a play
 50 points for the three 5's<br></br>
 600points for the 1 and the three 5's
 </h5>
-<h1>WINNING:</h1>
+<h1 style={{textAlign:'left', marginLeft:'1%'}}>WINNING:</h1>
 <h5 className="rules">The first player to score a total of 1,000 or more points wins, provided that no other players with a remaining turn can exceed that score.</h5>
-<HomeButton style={{}}/>
 </div>
+<HomeButton style={{}}/>
 </div>
 <Footer/>
 </div>
 
     )
 }
-
-export default Rules
+}
+export default connect() (Rules)

@@ -1,30 +1,32 @@
-import React from "react";
+import React, { Component } from 'react';
 import Logo from './Logo'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+class Header extends Component{
 
-const Header = () => {
-  return (
+render(){
+  return (     
       <div className='header'>
             <Logo/>
         <nav className='nav'>
-            <NavLink className="nav_link" to="/rules">
+            <Link className="nav_link" to="/rules">
                 <div className='nav_buttons'>
                     Rules
                 </div>
-            </NavLink>
-            <NavLink className="nav_link" to="/leaderboard">
+            </Link>
+            <Link className="nav_link" to="/leaderboard">
                 <div className='nav_buttons'>
                    Leaderboard
                 </div>
-            </NavLink>
-            <NavLink className="nav_link" to="/players">
+            </Link>
+            <Link className="nav_link" to="/about">
                 <div className='nav_buttons'>
-                   Edit Players
+                   About
                 </div>
-            </NavLink>
+            </Link>
         </nav>
         </div>
   )
 }
-
-export default Header;
+}
+export default connect()(Header);

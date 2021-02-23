@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react';
 import Home from './components/Home'
-import Players from './components/ui/routes/Players'
+import About from './components/ui/routes/About'
 import Rules from './components/ui/routes/Rules'
 import Leaderboard from './components/ui/routes/Leaderboard'
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { connect } from 'react-redux'
+import { BrowserRouter as Router, Route, Switch, useHistory} from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-
-function App() {
+class App extends Component{
+  constructor(props) {
+    super(props)
+  
+    }
+  render(){
   return (
     <div className='App'>
-    <Router>
+    <Router >
     <Route render={({location}) => (
       <TransitionGroup>
         <CSSTransition
@@ -19,10 +24,10 @@ function App() {
           classNames='fade'
          >
         <Switch location={location}>
-          <Route exact path="/players" component={Players} />
-          <Route exact path="/rules" component={Rules}/>
-          <Route exact path="/leaderboard" component={Leaderboard} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} history={useHistory}/>
+          <Route exact path="/rules" component={Rules} history={useHistory}/>
+          <Route exact path="/leaderboard" component={Leaderboard} history={useHistory}/>
+          <Route exact path='/' component={Home}/>
         </Switch>
         </CSSTransition>
         </TransitionGroup>
@@ -31,5 +36,7 @@ function App() {
     </div>
    );
   }
+}
 
-export default App;
+
+export default connect() (App);

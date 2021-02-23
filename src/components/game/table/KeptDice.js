@@ -11,15 +11,12 @@ const dicearr = [
 ]
 
 class KeptDice extends Component{
-  constructor(props) {
-      super(props);
-    }
     render() {
     const dice = []
     for (let i = 1; i <= this.props.store.kept_dice.length; i++) {    
       dice.push(
         <div>
-        <img className="dice_background" src={process.env.PUBLIC_URL + dicearr[this.props.store.kept_dice[i-1]-1]} />
+        <img className="dice_background" alt="dice"src={process.env.PUBLIC_URL + dicearr[this.props.store.kept_dice[i-1]-1]} />
         <br></br><br></br>
         </div>  
       )

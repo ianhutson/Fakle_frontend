@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 
 
 class ButtonsContainer extends Component {
-    constructor(props) {
-        super(props);
-    };    
-
 render(){
     const rollPhase = this.props.store.rollPhase
     if(this.props.store.fakle === true)

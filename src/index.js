@@ -5,13 +5,14 @@ import "./index.css";
 import manageGame from './reducers/manageGame'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-
 const store = createStore(manageGame)
 
 
 ReactDOM.render(
 <Provider store={store}>
-<App />
+    
+<App/>
+
 </Provider>, 
 document.getElementById("root")
 );

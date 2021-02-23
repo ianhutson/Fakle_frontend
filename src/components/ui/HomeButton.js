@@ -1,12 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function HomeButton() {
     return (
         <div >
-            <NavLink className="game_buttons" to="/">
+            <Link className="game_buttons" to="/">
                     Back to game!
-            </NavLink>
+            </Link>
         </div>
     )
 }

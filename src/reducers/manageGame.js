@@ -1,27 +1,26 @@
 import combinations from './helpers/combinations'
+
 export default function manageGame(state = {
-    p1_score: 0,
-    p2_score: 0, 
-    p3_score: 0, 
-    p4_score: 0, 
-    current_player: 1,
+    players: [
+    {id: 1, name: "Player 1", score: 0, color: 'red'},
+    {id: 2, name: "Player 2", score: 0, color: 'blue'},
+    {id: 3, name: "Player 3", score: 0, color: 'pink'},
+    {id: 4, name: "Player 4", score: 0, color: 'green'}],  
+    current_player:1,
     current_turn: 1,
     keep_value: 0,
     rollable_dice: 6,
     kept_dice: [],
     rolled_dice: [],
     selected_value: 0,
-    p1:"Player 1",
-    p2:"Player 2",
-    p3:"Player 3",
-    p4:"Player 4",
     num_of_players: 2,
     isSubmitted: false,
     rollPhase: true,
     selected_dice:[],
     selection_array: [],
     rollThrown: false,
-    fakle: false
+    fakle: false,
+    edit_players: false,
     }, action) {
     switch (action.type) {
 
@@ -29,10 +28,10 @@ export default function manageGame(state = {
           const settings = { game: action.game };
           return {
             ...state,
-            p1: settings.game.p1, 
-            p2: settings.game.p2,
-            p3: settings.game.p3,
-            p4: settings.game.p4,
+            players: [{id: 1, name: settings.game.p1, score: 0, color: 'red'},
+              {id: 2, name: settings.game.p2, score: 0, color: 'blue'},
+              {id: 3, name: settings.game.p3, score: 0, color: 'pink'},
+              {id: 4, name: settings.game.p4, score: 0, color: 'green'}],
             num_of_players: settings.game.num_of_players,
             isSubmitted: true
             }
@@ -151,14 +150,55 @@ export default function manageGame(state = {
             selected_value: 0,
             selected_dice:[],
             selection_array: [],
-            p1_score: state.p1_score + scoreHolder[0],
-            p2_score: state.p2_score + scoreHolder[1], 
-            p3_score: state.p3_score + scoreHolder[2], 
-            p4_score: state.p4_score + scoreHolder[3], 
+            players: [...state.players,
+              {id: 1, name: state.players[0].name, score: state.players[0].score + scoreHolder[0]},
+              {id: 2, name: state.players[1].name, score: state.players[1].score + scoreHolder[1]},
+              {id: 3, name: state.players[2].name, score: state.players[2].score + scoreHolder[2]},
+              {id: 4, name: state.players[3].name, score: state.players[3].score + scoreHolder[3]}],  
           };
+          case 'EDIT' :
+            return{
+              ...state,
+              edit_players: true
+            }
+
+          case 'EDIT_CONFIRM' :
+            console.log(action.value.p1)
+            const new_names = []
+            const new_colors = []
+
+            if (action.value.c1) new_colors.push(action.value.c1)
+            else new_colors.push(state.players[0].color)
+            if (action.value.c2) new_colors.push(action.value.c2)
+            else new_colors.push(state.players[1].color)
+            if (action.value.c3) new_colors.push(action.value.c3)
+            else new_colors.push(state.players[2].color)
+            if (action.value.c4) new_colors.push(action.value.c4)
+            else new_colors.push(state.players[3].color)
+
+            if (action.value.p1) new_names.push(action.value.p1)
+            else new_names.push(state.players[0].name)
+            if (action.value.p2) new_names.push(action.value.p2)
+            else new_names.push(state.players[1].name)
+            if (action.value.p3) new_names.push(action.value.p3)
+            else new_names.push(state.players[2].name)
+            if (action.value.p4) new_names.push(action.value.p4)
+            else new_names.push(state.players[3].name)
+      
+            return{
+              ...state,
+              edit_players: false,
+              players: [ 
+                {id: 1, name: new_names[0], score: state.players[0].score, color: new_colors[0]},
+                {id: 2, name: new_names[1], score: state.players[1].score, color: new_colors[1]},
+                {id: 3, name: new_names[2], score: state.players[2].score, color: new_colors[2]},
+                {id: 4, name: new_names[3], score: state.players[3].score, color: new_colors[3]}
+            ]
+            }
 
         default:
           return state;
     
       }
     }
+  
