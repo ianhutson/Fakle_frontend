@@ -234,12 +234,82 @@ input{
   justify-content: space-evenly;
   padding: 5px;
 }
+
 .color_button {
   text-align: center;
   height: 75px;
   width: 75px;
   padding: 5px;
 }
+
+.Dropdown-option.is-selected {
+  background-color: black;
+  color: white
+}
+
+.Dropdown-placeholder{
+
+}
+
+.Dropdown-control{
+  width:100px;
+  height: 30px;
+
+}
+.red_button {
+  font-size:'24px'; 
+  background-color:red; 
+  height:'20px'}
+
+.blue_button {
+  font-size:'24px'; 
+  background-color:blue; 
+  height:'20px'}
+   
+.pink_button {
+  font-size:'24px'; 
+  background-color:pink; 
+  height:'20px'}
+
+.green_button {
+  font-size:'24px'; 
+  background-color:green; 
+  height:'20px'}  
+
+.orange_button {
+  font-size:'24px'; 
+  background-color:orange; 
+  height:'20px'}  
+
+.brown_button {
+  font-size:'24px'; 
+  background-color:brown; 
+  height:'20px'}  
+
+.brown_button {
+  font-size:'24px'; 
+  background-color:maroon; 
+  height:'20px'}  
+
+.brown_button {
+  font-size:'24px'; 
+  background-color:purple; 
+  height:'20px'}  
+
+.brown_button {
+  font-size:'24px'; 
+  background-color:purple; 
+  height:'20px'}  
+
+.brown_button {
+  font-size:'24px'; 
+  background-color:silver; 
+  height:'20px'}  
+
+.brown_button {
+  font-size:'24px'; 
+  background-color:gold; 
+  height:'20px'}  
 
 .color_button:active {
   background-color: black;
@@ -315,7 +385,7 @@ input{
 .score_container{
   padding: 5px;
   height: fit-content;
-  width: 300px;
+  width: fit-content;;
   border-style: solid;
   border-width: 10px;
   border-color: #9A0000;

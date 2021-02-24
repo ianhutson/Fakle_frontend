@@ -4,15 +4,18 @@ import Footer from './ui/Footer'
 import Game from './game/Game'
 import PregameInput from './game/PregameInput'
 import { connect } from 'react-redux'
+import Winner from './game/Winner'
 
 class Home extends Component{
     render(){
     return (
         <div>
-
+            {console.log(this.props)}
             <Header store={this.props}/>
             {this.props.isSubmitted === false && <PregameInput submit={this.props.submit}/>}
-            {this.props.isSubmitted && <Game store={this.props}/>}
+            {this.props.isSubmitted && this.props.over === false && <Game store={this.props}/>}
+            {this.props.over === true && <Winner store={this.props}/>}
+
             <Footer /> 
         </div>
         )
@@ -35,7 +38,9 @@ const mapStateToProps = state => ({
     fakle: state.fakle,
     num_of_players: state.num_of_players, 
     isSubmitted: state.isSubmitted, 
-    edit_players: state.edit_players
+    edit_players: state.edit_players,
+    over: state.over,
+    winner: state.winner
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -45,6 +50,7 @@ const mapDispatchToProps = dispatch => ({
     end: end => dispatch({type: 'END', end}),
     select: value => dispatch({type: 'SELECT', value}),
     edit: value => dispatch({type: 'EDIT', value}),
-    edit_confirm: value => dispatch({type: 'EDIT_CONFIRM', value})
+    edit_confirm: value => dispatch({type: 'EDIT_CONFIRM', value}),
+    color: value => dispatch({type: 'COLOR', value})
   })
 export default connect(mapStateToProps, mapDispatchToProps) (Home)

@@ -21,11 +21,15 @@ export default function manageGame(state = {
     rollThrown: false,
     fakle: false,
     edit_players: false,
+    scores: [],
+    loading: false,
+    over: false,
+    winner: ""
     }, action) {
     switch (action.type) {
 
       case 'SUBMIT':
-          const settings = { game: action.game };
+          const settings = { game: action.game }          
           return {
             ...state,
             players: [{id: 1, name: settings.game.p1, score: 0, color: 'red'},
@@ -123,18 +127,30 @@ export default function manageGame(state = {
             rollThrown: false}}
 
         case 'END':
-          let playerNum = state.current_player + 1
-          let turn = state.current_turn
-          if(playerNum > state.num_of_players){
-            playerNum = 1
-            turn += 1}
-          console.log(turn)
           const scoreHolder = [0, 0, 0, 0]
+          let gameOver = false
+          let gameWinner = ""
           if(state.fakle === false)
           if (state.current_player === 1) scoreHolder[0] = state.keep_value 
           else if (state.current_player === 2) scoreHolder[1] = state.keep_value
           else if (state.current_player === 3) scoreHolder[2] = state.keep_value
           else scoreHolder[3] = state.keep_value
+          const totalHolder = [
+            state.players[0].score + scoreHolder[0], 
+            state.players[1].score + scoreHolder[1], 
+            state.players[2].score + scoreHolder[2], 
+            state.players[3].score + scoreHolder[3]]
+          let playerNum = state.current_player + 1
+          let turn = state.current_turn
+          if(playerNum > state.num_of_players){
+            if(totalHolder[0] > 1 || totalHolder[1] > 1 || totalHolder[2] > 1 || totalHolder[3] > 1){
+            gameOver = true
+            console.log(state.players[totalHolder.indexOf(Math.max(...totalHolder))].name)
+            gameWinner = state.players[totalHolder.indexOf(Math.max(...totalHolder))]}
+            else
+            playerNum = 1
+            turn += 1}
+       
     
           return{
             ...state,
@@ -150,11 +166,13 @@ export default function manageGame(state = {
             selected_value: 0,
             selected_dice:[],
             selection_array: [],
-            players: [...state.players,
-              {id: 1, name: state.players[0].name, score: state.players[0].score + scoreHolder[0]},
-              {id: 2, name: state.players[1].name, score: state.players[1].score + scoreHolder[1]},
-              {id: 3, name: state.players[2].name, score: state.players[2].score + scoreHolder[2]},
-              {id: 4, name: state.players[3].name, score: state.players[3].score + scoreHolder[3]}],  
+            players: [
+              {id: 1, name: state.players[0].name, score: state.players[0].score + scoreHolder[0], color: state.players[0].color},
+              {id: 2, name: state.players[1].name, score: state.players[1].score + scoreHolder[1], color: state.players[1].color},
+              {id: 3, name: state.players[2].name, score: state.players[2].score + scoreHolder[2], color: state.players[2].color},
+              {id: 4, name: state.players[3].name, score: state.players[3].score + scoreHolder[3], color: state.players[3].color}],  
+            over: gameOver,
+            winner: gameWinner
           };
           case 'EDIT' :
             return{
@@ -163,7 +181,7 @@ export default function manageGame(state = {
             }
 
           case 'EDIT_CONFIRM' :
-            console.log(action.value.p1)
+            console.log(action)
             const new_names = []
             const new_colors = []
 
@@ -195,7 +213,19 @@ export default function manageGame(state = {
                 {id: 4, name: new_names[3], score: state.players[3].score, color: new_colors[3]}
             ]
             }
-
+          case 'LOADING':
+              return {
+            ...state,
+            scores: [...state.scores],
+            loading: true
+          }
+          case 'POSTING':
+            console.log(action)
+              return {
+            ...state,
+            scores: action.scores,
+            loading: false
+          }
         default:
           return state;
     

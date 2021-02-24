@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Game} from './models/game'
 
 class PregameInput extends Component {
   constructor(props){ 
@@ -41,7 +41,25 @@ class PregameInput extends Component {
       isSubmitted: true
     },
     () => {
-      console.log('submitted')
+      const configObj = {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          winner: ''
+        })
+    }
+    fetch('http://localhost:3001/games', configObj)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data.data)
+            let newGame = new Game(data.data.attributes)
+            Game.loadedScores.push(newGame)
+            Game.generateScoreboard()
+        })
+
     })
   }
 

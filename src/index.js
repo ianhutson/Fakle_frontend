@@ -5,7 +5,10 @@ import "./index.css";
 import manageGame from './reducers/manageGame'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-const store = createStore(manageGame)
+import thunk from 'redux-thunk';
+import { applyMiddleware } from "redux"
+
+const store = createStore(manageGame, applyMiddleware(thunk))
 
 
 ReactDOM.render(

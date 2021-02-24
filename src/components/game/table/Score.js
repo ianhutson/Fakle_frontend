@@ -18,7 +18,7 @@ class Score extends Component{
                 ))}
                 </table><br></br>
    
-                {this.props.store.edit_players === false && <button onClick={this.props.store.edit} className="game_buttons" style={{width:'80%'}}>Edit Players</button>}
+                {this.props.store.edit_players === false && <button onClick={this.props.store.edit} className="game_buttons" style={{width:'175px'}}>Edit Players</button>}
                 {this.props.store.edit_players === true && <EditPlayers store={this.props.store}/> }
             </div>
         </div>
