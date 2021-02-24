@@ -58,16 +58,16 @@ class EditPlayers extends Component{
                 this.dropdownMenu = element;
               }}>
                 <div style={{display:'flex', flexDirection:'column'}}>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="red"> Red </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="blue"> Blue </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="pink"> Pink </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="green"> Green </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="orange"> Orange </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="brown"> Brown </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="maroon"> Maroon </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="purple"> Purple </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="silver"> Silver </button>
-                <button style={{fontSize:'24px', backgroundColor:'beige'}} className="gold"> Gold </button>
+                <button style={{fontSize:'24px', backgroundColor:'red', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'blue', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'pink', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'green', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'orange', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'brown', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'maroon', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'purple', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'silver', height:'20px'}}></button>
+                <button style={{fontSize:'24px', backgroundColor:'gold', height:'20px'}}></button>
                 </div>
               </div>
             )
