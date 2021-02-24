@@ -128,6 +128,7 @@ export default function manageGame(state = {
 
         case 'END':
           const scoreHolder = [0, 0, 0, 0]
+          const maxScore = 1
           let gameOver = false
           let gameWinner = ""
           if(state.fakle === false)
@@ -143,7 +144,7 @@ export default function manageGame(state = {
           let playerNum = state.current_player + 1
           let turn = state.current_turn
           if(playerNum > state.num_of_players){
-            if(totalHolder[0] > 1 || totalHolder[1] > 1 || totalHolder[2] > 1 || totalHolder[3] > 1){
+            if(totalHolder[0] > maxScore || totalHolder[1] > maxScore || totalHolder[2] > maxScore || totalHolder[3] > maxScore){
             gameOver = true
             console.log(state.players[totalHolder.indexOf(Math.max(...totalHolder))].name)
             gameWinner = state.players[totalHolder.indexOf(Math.max(...totalHolder))]}

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import HomeButton from '../ui//HomeButton'
 import { connect } from 'react-redux'
 
 
-class Winner extends Component {
+class Postgame extends Component {
     render(){
     return (
         <div>
@@ -18,4 +17,4 @@ class Winner extends Component {
     }
 }
 
-export default connect() (Winner)
+export default connect() (Postgame)

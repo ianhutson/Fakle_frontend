@@ -1,10 +1,20 @@
 import React from 'react';
 
 class ScoreList extends React.Component {
+  
   scoreList = () => {
-      console.log(this.props)
-    return this.props.scores.map(score => score.winner )}
-
+  const winnersArr = this.props.scores.map(score => score.winner.toLowerCase() )
+  const winnersTallies = []
+  const html = []
+  winnersArr.forEach(winner => {
+  if (winnersTallies.includes(winner) === false) winnersTallies.push(winner) 
+  });
+  winnersTallies.forEach(winner => {
+    html.push(<h1>{winner} - {winnersArr.filter(x => x === winner).length}</h1>)
+  })
+  return html
+  }
+    
   render() {
     return (
       <div>
@@ -13,5 +23,7 @@ class ScoreList extends React.Component {
     )
   }
 }
+
+
 
 export default ScoreList;

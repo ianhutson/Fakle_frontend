@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Game} from './models/game'
 
-class PregameInput extends Component {
+class Pregame extends Component {
   constructor(props){ 
     super(props) 
 
@@ -103,4 +103,4 @@ class PregameInput extends Component {
 
 
 
-export default PregameInput;
+export default Pregame;

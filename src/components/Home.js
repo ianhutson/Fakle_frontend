@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Header from './ui/Header'
 import Footer from './ui/Footer'
 import Game from './game/Game'
-import PregameInput from './game/PregameInput'
+import Pregame from './game/Pregame'
 import { connect } from 'react-redux'
-import Winner from './game/Winner'
+import Postgame from './game/Postgame'
 
 class Home extends Component{
     render(){
@@ -12,9 +12,9 @@ class Home extends Component{
         <div>
             {console.log(this.props)}
             <Header store={this.props}/>
-            {this.props.isSubmitted === false && <PregameInput submit={this.props.submit}/>}
+            {this.props.isSubmitted === false && <Pregame submit={this.props.submit}/>}
             {this.props.isSubmitted && this.props.over === false && <Game store={this.props}/>}
-            {this.props.over === true && <Winner store={this.props}/>}
+            {this.props.over === true && <Postgame store={this.props}/>}
 
             <Footer /> 
         </div>
