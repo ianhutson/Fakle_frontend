@@ -35,24 +35,24 @@ At the end of a player’s turn, any points they have scored are written down an
 </h5>
 <h1 style={{textAlign:'left', marginLeft:'1%'}}> SCORING:</h1>
 <h5 className="rules">
-1	10 points<br></br>
-5	5 points<br></br>
-Three 1's	10 points<br></br>
-Three 2's	20 points<br></br>
-Three 3's	30 points<br></br>
-Three 4's	40 points<br></br>
-Three 5's	50 points<br></br>
-Three 6's	60 points<br></br>
-1-2-3-4-5-6 	300 points<br></br>
+1 - 10 points<br></br>
+5 - 5 points<br></br>
+Three 1's - 10 points<br></br>
+Three 2's - 20 points<br></br>
+Three 3's - 30 points<br></br>
+Three 4's - 40 points<br></br>
+Three 5's - 50 points<br></br>
+Three 6's - 60 points<br></br>
+1-2-3-4-5-6 - 300 points<br></br>
 3 Pairs	150 points (including 4-of-a-kind and a pair)<br></br>
-Note that scoring combinations only count when made with a single throw. (Example: If a player rolls a 1 and sets it aside and then rolls two 1’s on their next throw, they only score 300 points, not 1000.)
+Note that scoring combinations only count when made with a single throw. (Example: If a player rolls a 1 and sets it aside and then rolls two 1’s on their next throw, they only score 30 points, not 100.)
 <br></br><br></br>
 Sometimes a single roll will provide multiple ways to score. For example, a player rolling 1-2-4-5-5-5 could score one of the following:
 <br></br><br></br>
 10 points for the 1<br></br>
 15 points for the 1 and a 5<br></br>
 50 points for the three 5's<br></br>
-600points for the 1 and the three 5's
+60 points for the 1 and the three 5's
 </h5>
 <h1 style={{textAlign:'left', marginLeft:'1%'}}>WINNING:</h1>
 <h5 className="rules">The first player to score a total of 1,000 or more points wins, provided that no other players with a remaining turn can exceed that score.</h5>
