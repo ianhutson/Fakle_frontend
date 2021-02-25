@@ -1,4 +1,6 @@
 import combinations from './helpers/combinations'
+import createGame from './helpers/createGame'
+
 
 export default function manageGame(state = {
     players: [
@@ -146,8 +148,8 @@ export default function manageGame(state = {
           if(playerNum > state.num_of_players){
             if(totalHolder[0] > maxScore || totalHolder[1] > maxScore || totalHolder[2] > maxScore || totalHolder[3] > maxScore){
             gameOver = true
-            console.log(state.players[totalHolder.indexOf(Math.max(...totalHolder))].name)
-            gameWinner = state.players[totalHolder.indexOf(Math.max(...totalHolder))]}
+            gameWinner = state.players[totalHolder.indexOf(Math.max(...totalHolder))]
+            createGame(gameWinner.name)}
             else
             playerNum = 1
             turn += 1}

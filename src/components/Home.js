@@ -10,7 +10,6 @@ class Home extends Component{
     render(){
     return (
         <div>
-            {console.log(this.props)}
             <Header store={this.props}/>
             {this.props.isSubmitted === false && <Pregame submit={this.props.submit}/>}
             {this.props.isSubmitted && this.props.over === false && <Game store={this.props}/>}
