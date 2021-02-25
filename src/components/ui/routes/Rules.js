@@ -19,9 +19,7 @@ class Rules extends Component{
 
 <h1 style={{textAlign:'left', marginLeft:'1%'}}>HOW TO PLAY:</h1>
 <h5 className="rules">
-The following Fakle rules are the most commonly used, but there are numerous variations to choose from. Before the game begins, players should establish which rules or variations will be used. Our scoring summary chart makes this process easy and provides for endless variety in your Fakle games!
-<br></br><br></br>
-One player is chosen to begin and play moves clockwise around the table. Each player in turn rolls all six dice and checks to see if they have rolled any scoring dice or combinations. (See Scoring below.) Any dice that score may be set aside and then the player may choose to roll all the remaining dice. The player must set aside at least one scoring die of their choice if possible but is not required to set aside all scoring dice.
+Each player in turn rolls all six dice and checks to see if they have rolled any scoring dice or combinations. (See Scoring below.) Any dice that score may be set aside and then the player may choose to roll all the remaining dice. The player must set aside at least one scoring die of their choice if possible but is not required to set aside all scoring dice.
 <br></br><br></br>
 For example, if a player rolled 1-2-2-5-5-6 on their turn, they could set aside the 1 and the two 5's for scoring, or they could choose to set aside only the 1. Any scoring dice that are not set aside may be rerolled along with the non-scoring dice.
 <br></br><br></br>
