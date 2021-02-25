@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# DESCRIPTION
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application is a project built for Flatiron School. It is a dice game app based on Farkle, and it runs on a React frontend and Rails API backend.
 
-## Available Scripts
+[Fakle Backend Repo](https://github.com/ianhutson/Fakle_backend)
 
-In the project directory, you can run:
+# BUILT WITH
 
-### `yarn start`
+- React
+- Javascript
+- Rails
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# INSTALLATION
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To install this application in your local environment, clone both front and and backend repositories. Navigate to the backend directory within your console and run the following command:
 
-### `yarn test`
+```bundle && rails:db migrate && rails:db seed && rails s```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will start your Rails server. When it is live, navigate to the frontend directory and run:
 
-### `yarn build`
+```npm i && npm start```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ to fire up the frontend.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# HOW TO PLAY
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- OBJECT OF THE GAME:
+The object of the game of Fakle is to score a minimum of 1,000 points.
 
-### `yarn eject`
+- NUMBER OF PLAYERS:
+Fakle can be played by 2-4 players.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- HOW TO PLAY:
+Each player in turn rolls all six dice and checks to see if they have rolled any scoring dice or combinations. (See Scoring below.) Any dice that score may be set aside and then the player may choose to roll all the remaining dice. The player must set aside at least one scoring die of their choice if possible but is not required to set aside all scoring dice.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For example, if a player rolled 1-2-2-5-5-6 on their turn, they could set aside the 1 and the two 5's for scoring, or they could choose to set aside only the 1. Any scoring dice that are not set aside may be rerolled along with the non-scoring dice.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+If all six dice have been set aside for scoring (known as having “hot dice”), the player can choose to roll all six dice again and continue adding to their accumulated score or they can bank their points, end their turn, and pass the dice to the next player.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A player’s turn continues until either they decide to stop (at which point they then score their accumulated points) or until they fail to roll any scoring dice on a throw.
 
-## Learn More
+If a player scores no points on a roll, this is known as a Fakle. The player may continue to roll any dice that have not been previously set aside for scoring, but all of their points gained so far that turn are lost.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+At the end of a player’s turn, any points they have scored are written down and the dice are passed to the next player.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- SCORING:
+1 - 10 points
+5 - 5 points
+Three 1's - 10 points
+Three 2's - 20 points
+Three 3's - 30 points
+Three 4's - 40 points
+Three 5's - 50 points
+Three 6's - 60 points
+1-2-3-4-5-6 - 300 points
+3 Pairs 150 points (including 4-of-a-kind and a pair)
+Note that scoring combinations only count when made with a single throw. (Example: If a player rolls a 1 and sets it aside and then rolls two 1’s on their next throw, they only score 30 points, not 100.)
 
-### Code Splitting
+Sometimes a single roll will provide multiple ways to score. For example, a player rolling 1-2-4-5-5-5 could score one of the following:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+10 points for the 1
+15 points for the 1 and a 5
+50 points for the three 5's
+60 points for the 1 and the three 5's
 
-### Analyzing the Bundle Size
+- WINNING:
+The first player to score a total of 1,000 or more points wins, provided that no other players with a remaining turn can exceed that score.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+# Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Bug reports and pull requests are welcome on GitHub at https://github.com/ianhutson/Fakle_frontend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-### Advanced Configuration
+# License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The app is available as open source under the terms of the MIT License.
 
-### Deployment
+# Code of Conduct
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Everyone interacting in the Rafflemania on Rails project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
