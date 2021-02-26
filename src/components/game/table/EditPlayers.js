@@ -6,11 +6,9 @@ import 'react-dropdown/style.css';
 class EditPlayers extends Component{
   constructor() {
     super();
+    console.log(this)
     this.state = {
-       1: 'red',
-       2: 'blue',
-       3: 'pink',
-       4: 'purple'
+      
    }
   }
 
@@ -57,7 +55,6 @@ class EditPlayers extends Component{
       ]
       const colors = []
       for (let i = 1; i <= this.props.store.num_of_players; i++) {
-        const defaultOption = options[i-1];
         colors.push(
             <div>
               <h1 style={{color:this.props.store.players[i-1].color,padding:'10px', fontFamily: 'digital'}}>P{i}</h1>

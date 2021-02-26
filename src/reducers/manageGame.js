@@ -68,9 +68,9 @@ export default function manageGame(state = {
         const combos = combine(rolled_dice_holder, 1)
         let i = 0
         combos.forEach(combo => {
-          if (combo in combinations === true) i =+ 1
+          if (combinations(combo) !== 0) i =+ 1
         })
-        if (i === 0) eff = true
+        if (i < 0) eff = true
           return {
             ...state,
             fakle: eff,
@@ -80,32 +80,24 @@ export default function manageGame(state = {
             };
             
       case 'SELECT':
-        const index_values = state.selection_array.indexOf(state.rolled_dice[action.value-1])
-        const clone_of_value_array = [state.selection_array]
-        clone_of_value_array.splice(index_values, 1)
-  
-
-        const index_ids = state.selected_dice.indexOf(action.value)
-        const clone_of_selected_array = [state.selected_dice]
-        clone_of_selected_array.splice(index_ids, 1)
         const includes_check = state.selected_dice.includes(action.value)
-
-      
-        const currentValue = [...state.selection_array, state.rolled_dice[action.value - 1]].sort().join(', ')
-          if (includes_check === true)
-            return {
-              ...state, 
-              selected_dice: clone_of_selected_array, 
-              selection_array: clone_of_value_array, 
-              selected_value: combinations[clone_of_selected_array.sort().join(', ')]}
-          else return {
+        let currentValue = []
+        if (includes_check === false){
+        currentValue = [...state.selection_array, state.rolled_dice[action.value - 1]]
+        console.log(currentValue)
+          return {
             ...state, 
-            selected_value: combinations[currentValue], 
+            selected_value: combinations(currentValue), 
             selected_dice: [...state.selected_dice, action.value], 
             selection_array: [...state.selection_array, 
-            state.rolled_dice[action.value - 1]]}
-          
-        
+            state.rolled_dice[action.value - 1]]}}
+        else 
+        currentValue = [...state.selection_array].splice(state.selection_array.indexOf(action.value))
+          return {
+            ...state, 
+            selected_dice: [...state.selected_dice].splice((action.value-1)), 
+            selection_array: [...state.selection_array].splice((action.value)),
+            selected_value: combinations(currentValue)}
 
         case 'KEEP':
           const kept_dice_clone = state.kept_dice.concat(state.selection_array)
@@ -115,7 +107,6 @@ export default function manageGame(state = {
           rollableDice = 6;
           keptDice = [];}
           else rollableDice = state.rollable_dice - state.selected_dice.length
-          console.log(state.selected_dice.length)
           if (state.selected_value > 0){
           return{
             ...state, 
@@ -184,9 +175,9 @@ export default function manageGame(state = {
             }
 
           case 'EDIT_CONFIRM' :
-            console.log(action)
+            console.log(action.value)
             const new_names = []
-            const new_colors = []
+            const new_colors = []       
 
             if (action.value.c1) new_colors.push(action.value.c1)
             else new_colors.push(state.players[0].color)
@@ -205,7 +196,9 @@ export default function manageGame(state = {
             else new_names.push(state.players[2].name)
             if (action.value.p4) new_names.push(action.value.p4)
             else new_names.push(state.players[3].name)
-      
+            
+            console.log(new_colors)
+
             return{
               ...state,
               edit_players: false,
@@ -223,7 +216,7 @@ export default function manageGame(state = {
             loading: true
           }
           case 'POSTING':
-            console.log(action)
+
               return {
             ...state,
             scores: action.scores,

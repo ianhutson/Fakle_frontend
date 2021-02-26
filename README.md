@@ -67,14 +67,14 @@ Sometimes a single roll will provide multiple ways to score. For example, a play
 The first player to score a total of 1,000 or more points wins, provided that no other players with a remaining turn can exceed that score.
 
 
-# Contributing
+# CONTRIBUTING
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/ianhutson/Fakle_frontend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-# License
+# LICENSE
 
 The app is available as open source under the terms of the MIT License.
 
-# Code of Conduct
+# CODE OF CONDUCT
 
 Everyone interacting in the Rafflemania on Rails project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
