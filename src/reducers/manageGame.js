@@ -175,7 +175,6 @@ export default function manageGame(state = {
             }
 
           case 'EDIT_CONFIRM' :
-            console.log(action.value.c1)
             return{
               ...state,
               edit_players: false,

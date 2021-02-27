@@ -1,14 +1,12 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
 
 class EditPlayers extends Component{
   constructor(props) {
     super(props);
     console.log(this)
     this.state = {
-      players: props.store.players,
       1: props.store.players[0].name, 
       2: props.store.players[1].name, 
       3: props.store.players[2].name, 
@@ -61,8 +59,8 @@ class EditPlayers extends Component{
       for (let i = 1; i <= this.props.store.num_of_players; i++) {
         colors.push(
             <div>
-              <h1 style={{color:this.props.store.players[i-1].color,padding:'10px', fontFamily: 'digital'}}>P{i}</h1>
-            <Dropdown className="color_selectors" options={options} onChange={(event) => this.setColor(event, i)} value={options[i-1].value} />
+              <h1 style={{color:this.state['c'+ (i)],padding:'10px', fontFamily: 'digital'}}>P{i}</h1>
+            <Dropdown className={this.state['c'+ i]} options={options} onChange={(event) => this.setColor(event, i)} value={options[i-1].value} />
           </div>
         );
       }
