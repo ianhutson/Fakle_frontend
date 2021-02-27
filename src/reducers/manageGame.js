@@ -1,7 +1,6 @@
 import combinations from './helpers/combinations'
 import createGame from './helpers/createGame'
 
-
 export default function manageGame(state = {
     players: [
     {id: 1, name: "Player 1", score: 0, color: 'red'},
@@ -43,33 +42,10 @@ export default function manageGame(state = {
             }
 
       case 'ROLL':
-          const rolled_dice_holder = Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1)
-          let eff = false
-          var combine = function(a, min) {
-            var fn = function(n, src, got, all) {
-                if (n === 0) {
-                    if (got.length > 0) {
-                        all[all.length] = got;
-                    }
-                    return;
-                }
-                for (var j = 0; j < src.length; j++) {
-                    fn(n - 1, src.slice(j + 1), got.concat([src[j]]), all);
-                }
-                return;
-            }
-            var all = [];
-            for (var i = min; i < a.length; i++) {
-                fn(i, a, [], all);
-            }
-            all.push(a);
-            return all;
-        }
-        const combos = combine(rolled_dice_holder, 1)
+        const rolled_dice_holder = Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1)
+        let eff = false
         let i = 0
-        combos.forEach(combo => {
-          if (combinations(combo) !== 0) i =+ 1
-        })
+          if (combinations(rolled_dice_holder) == 0) eff = true
         if (i < 0) eff = true
           return {
             ...state,
@@ -121,7 +97,7 @@ export default function manageGame(state = {
 
         case 'END':
           const scoreHolder = [0, 0, 0, 0]
-          const maxScore = 1
+          const maxScore = 1000
           let gameOver = false
           let gameWinner = ""
           if(state.fakle === false)
@@ -144,8 +120,6 @@ export default function manageGame(state = {
             else
             playerNum = 1
             turn += 1}
-       
-    
           return{
             ...state,
             fakle: false,
@@ -180,9 +154,9 @@ export default function manageGame(state = {
               edit_players: false,
               players: [
                 {id: 1, name: action.value[1], score: state.players[0].score, color: action.value.c1},
-                {id: 2, name: action.value[2], score: state.players[0].score, color: action.value.c2},
-                {id: 3, name: action.value[3], score: state.players[0].score, color: action.value.c3},
-                {id: 4, name: action.value[4], score: state.players[0].score, color: action.value.c4}]
+                {id: 2, name: action.value[2], score: state.players[1].score, color: action.value.c2},
+                {id: 3, name: action.value[3], score: state.players[2].score, color: action.value.c3},
+                {id: 4, name: action.value[4], score: state.players[3].score, color: action.value.c4}]
             }
           case 'LOADING':
               return {
@@ -191,7 +165,6 @@ export default function manageGame(state = {
             loading: true
           }
           case 'POSTING':
-
               return {
             ...state,
             scores: action.scores,
@@ -199,7 +172,6 @@ export default function manageGame(state = {
           }
         default:
           return state;
-    
       }
     }
   
