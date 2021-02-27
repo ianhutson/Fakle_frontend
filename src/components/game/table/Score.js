@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import EditPlayers from './EditPlayers'
 class Score extends Component{
         render(){
+            const store = this.props.store
         return (
             <div className="score_container">
             <div className="totals_container">
@@ -17,9 +18,10 @@ class Score extends Component{
                 </tr>
                 ))}
                 </table><br></br>
-   
+                    
                 {this.props.store.edit_players === false && <button onClick={this.props.store.edit} className="game_buttons" style={{width:'175px'}}>Edit Players</button>}
                 {this.props.store.edit_players === true && <EditPlayers store={this.props.store}/> }
+                {console.log()}
             </div>
         </div>
         <br></br>

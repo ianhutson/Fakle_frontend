@@ -4,32 +4,35 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
 class EditPlayers extends Component{
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     console.log(this)
     this.state = {
-      
+      players: props.store.players,
+      1: props.store.players[0].name, 
+      2: props.store.players[1].name, 
+      3: props.store.players[2].name, 
+      4: props.store.players[3].name, 
+      c1: props.store.players[0].color, 
+      c2: props.store.players[1].color, 
+      c3: props.store.players[2].color, 
+      c4: props.store.players[3].color, 
    }
+   
   }
 
   handleChange(event, num) {
-    console.log(num)
-   let key = 'p'+num
-     this.setState({...this.state, [key]: event.target.value },
+    const key = num
+     this.setState({[key]: event.target.value},
        () => {
-         console.log('text changed')
+         console.log(this.state)
        });
       }
 
   setColor(event, num) {
-    console.log(event)
-    let key = 'c'+num
-     this.setState({...this.state, [key]: event.value },
-       () => {
-         console.log('color changed')
-       });
-      }
-  render(){
+    const key = 'c'+num
+    this.setState({[key]: event.value})}
+    render(){
     
     const inputs = [];
     for (let i = 1; i <= this.props.store.num_of_players; i++) {
@@ -54,6 +57,7 @@ class EditPlayers extends Component{
         {value:'gold', className:'gold'}
       ]
       const colors = []
+
       for (let i = 1; i <= this.props.store.num_of_players; i++) {
         colors.push(
             <div>

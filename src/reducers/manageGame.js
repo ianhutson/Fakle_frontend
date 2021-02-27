@@ -175,39 +175,15 @@ export default function manageGame(state = {
             }
 
           case 'EDIT_CONFIRM' :
-            console.log(action.value)
-            const new_names = []
-            const new_colors = []       
-
-            if (action.value.c1) new_colors.push(action.value.c1)
-            else new_colors.push(state.players[0].color)
-            if (action.value.c2) new_colors.push(action.value.c2)
-            else new_colors.push(state.players[1].color)
-            if (action.value.c3) new_colors.push(action.value.c3)
-            else new_colors.push(state.players[2].color)
-            if (action.value.c4) new_colors.push(action.value.c4)
-            else new_colors.push(state.players[3].color)
-
-            if (action.value.p1) new_names.push(action.value.p1)
-            else new_names.push(state.players[0].name)
-            if (action.value.p2) new_names.push(action.value.p2)
-            else new_names.push(state.players[1].name)
-            if (action.value.p3) new_names.push(action.value.p3)
-            else new_names.push(state.players[2].name)
-            if (action.value.p4) new_names.push(action.value.p4)
-            else new_names.push(state.players[3].name)
-            
-            console.log(new_colors)
-
+            console.log(action.value.c1)
             return{
               ...state,
               edit_players: false,
-              players: [ 
-                {id: 1, name: new_names[0], score: state.players[0].score, color: new_colors[0]},
-                {id: 2, name: new_names[1], score: state.players[1].score, color: new_colors[1]},
-                {id: 3, name: new_names[2], score: state.players[2].score, color: new_colors[2]},
-                {id: 4, name: new_names[3], score: state.players[3].score, color: new_colors[3]}
-            ]
+              players: [
+                {id: 1, name: action.value[1], score: state.players[0].score, color: action.value.c1},
+                {id: 2, name: action.value[2], score: state.players[0].score, color: action.value.c2},
+                {id: 3, name: action.value[3], score: state.players[0].score, color: action.value.c3},
+                {id: 4, name: action.value[4], score: state.players[0].score, color: action.value.c4}]
             }
           case 'LOADING':
               return {
