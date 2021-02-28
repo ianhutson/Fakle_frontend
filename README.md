@@ -63,7 +63,7 @@ Sometimes a single roll will provide multiple ways to score. For example, a play
 50 points for the three 5's  
 60 points for the 1 and the three 5's  
 
-**WINNING:** 
+**WINNING:**  
 The first player to score a total of 1,000 or more points wins, provided that no other players with a remaining turn can exceed that score.
 
 
