@@ -60,20 +60,21 @@ export default function manageGame(state = {
         let currentValue = []
         if (includes_check === false){
         currentValue = [...state.selection_array, state.rolled_dice[action.value - 1]]
-        console.log(currentValue)
           return {
             ...state, 
             selected_value: combinations(currentValue), 
             selected_dice: [...state.selected_dice, action.value], 
             selection_array: [...state.selection_array, 
-            state.rolled_dice[action.value - 1]]}}
+                              state.rolled_dice[action.value - 1]]
+                            }}
         else 
-        currentValue = [...state.selection_array].splice(state.selection_array.indexOf(action.value))
+        currentValue = []
+        console.log(currentValue)
           return {
             ...state, 
-            selected_dice: [...state.selected_dice].splice((action.value-1)), 
-            selection_array: [...state.selection_array].splice((action.value)),
-            selected_value: combinations(currentValue)}
+            selected_dice: [], 
+            selection_array: [],
+            selected_value: 0}
 
         case 'KEEP':
           const kept_dice_clone = state.kept_dice.concat(state.selection_array)

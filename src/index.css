@@ -39,7 +39,7 @@ code {
 }
 
 .footer {
-  height: 15px;
+  height: 30px;
   position: fixed;
   display: grid; 
   grid-template-rows: repeat(2, 1fr);
@@ -47,10 +47,10 @@ code {
   align-items: center; 
   bottom: 0;
   width: 100%;
-  font-size: 14px;
+  font-size: 24px;
   background-color: #9A0000;
   color: white;
-  padding: 7px;
+
 }
 
 .footer__links {
@@ -63,6 +63,7 @@ code {
   align-items: center; 
   text-align: center;
   text-decoration: none;
+  margin-top: .1%;
 }
 
 .footer__links a:link{
