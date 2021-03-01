@@ -142,7 +142,7 @@ function combinations(array) {
 					score += x * 10;
 				} else { // otherwise..
 					// they are 1s
-					score += 100;
+					score += 30;
 				}
  			
 				// retrieve unused array from structured array

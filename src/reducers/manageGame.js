@@ -97,7 +97,7 @@ export default function manageGame(state = {
 
         case 'END':
           const scoreHolder = [0, 0, 0, 0]
-          const maxScore = 1000
+          const maxScore = 999
           let gameOver = false
           let gameWinner = ""
           if(state.fakle === false)
