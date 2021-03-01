@@ -45,7 +45,7 @@ export default function manageGame(state = {
         const rolled_dice_holder = Array.from({length: state.rollable_dice}, () => Math.floor(Math.random() * 6) + 1)
         let eff = false
         let i = 0
-          if (combinations(rolled_dice_holder) == 0) eff = true
+          if (combinations(rolled_dice_holder).score == 0) eff = true
         if (i < 0) eff = true
           return {
             ...state,

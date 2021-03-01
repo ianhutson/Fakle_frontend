@@ -1,5 +1,6 @@
 import containsAll from './containsAll'
 
+// check array for all score combinations
 function combinations(array) {
 	// this array stores unused dice
 	var unused = [];
@@ -11,10 +12,9 @@ function combinations(array) {
 	
 	// store number of dice in array
 	var l = unused.length;
-	console.log(l)
+	
 	// stores score to return (in case of multiple combinations)
-	var state = {score:0,
-		extra: []};
+	var score = 0;
 	
 	// if there are 6..
 	if (l == 6) {
@@ -25,8 +25,9 @@ function combinations(array) {
 			// retrieve result from structured array
 			if (contains.result == true) {
 				// return score and empty array
-				return state.score += 600
-				;
+				return {score: 600,
+						extra: []
+				};
 			}           
 		}
 		
@@ -36,8 +37,9 @@ function combinations(array) {
 		// retrieve result from structured array
 		if (contains.result == true) {
 			// return score and empty array
-			return state.score += 150
-			;
+			return {score: 150,
+					extra: []
+			};
 		}
 		
 		// check for 2 three of a kinds
@@ -48,7 +50,9 @@ function combinations(array) {
 				// retrieve result from structured array
 				if (contains.result == true) {
 					// return score and empty array
-					return state.score += 200
+					return {score: 200,
+							extra: []
+					};
 				}
 			}
 		}
@@ -61,7 +65,9 @@ function combinations(array) {
 				// retrieve result from structured array
 				if (contains.result == true) {
 					// return score and empty array
-					return state.score += 250
+					return {score: 250,
+							extra: []
+					};
 				}
 			}
 		}
@@ -75,7 +81,9 @@ function combinations(array) {
 					// retrieve result from structured array
 					if (contains.result == true) {
 						// return score and empty array
-						return state.score += 150
+						return {score: 150,
+								extra: []
+						};
 					}
 				}
 			}
@@ -90,7 +98,7 @@ function combinations(array) {
  		
 			// retrieve result from structured array
 			if (contains.result == true) {
-				state.score += 300;
+				score += 300;
  			
 				// retrieve unused array from structured array
 				unused = contains.array;
@@ -109,7 +117,7 @@ function combinations(array) {
  		
 			// retrieve result from structured array
 			if (contains.result == true) {
-				state.score += 200;
+				score += 200;
  			
 				// retrieve unused array from structured array
 				unused = contains.array;
@@ -131,10 +139,10 @@ function combinations(array) {
 				// if they are 2s, 3s, 4s, 5s, or 6s..
 				if (x > 1) {
 					// multiply by 100
-					state.score += x * 10;
+					score += x * 10;
 				} else { // otherwise..
 					// they are 1s
-					state.score += 100;
+					score += 100;
 				}
  			
 				// retrieve unused array from structured array
@@ -153,7 +161,7 @@ function combinations(array) {
  		
  		// retrieve result from structured array
  		if (contains.result == true) {
-			state.score += 20;
+			score += 20;
  			
  			// retrieve unused array from structured array
  			unused = contains.array;
@@ -170,7 +178,7 @@ function combinations(array) {
  		
  		// retrieve result from structured array
  		if (contains.result == true) {
-			state.score += 10;
+			score += 10;
  			
  			// retrieve unused array from structured array
  			unused = contains.array;
@@ -187,7 +195,7 @@ function combinations(array) {
  		
  		// retrieve result from structured array
  		if (contains.result == true) {
-			state.score += 10;
+			score += 10;
  			
  			// retrieve unused array from structured array
  			unused = contains.array;
@@ -204,7 +212,7 @@ function combinations(array) {
  		
  		// retrieve result from structured array
  		if (contains.result == true) {
- 			state.score += 5;
+ 			score += 5;
  			
  			// retrieve unused array from structured array
  			unused = contains.array;
@@ -213,8 +221,11 @@ function combinations(array) {
 			l = unused.length;
 		}
  	}
- 	 	// return additive score and array with unused dice
-		  return state.score += 600, state.exta = unused
+ 	
+ 	// return additive score and array with unused dice
+ 	return {score: score,
+ 			extra: unused
+ 	};
 }
 
 
