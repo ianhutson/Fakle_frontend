@@ -62,14 +62,13 @@ export default function manageGame(state = {
         currentValue = [...state.selection_array, state.rolled_dice[action.value - 1]]
           return {
             ...state, 
-            selected_value: combinations(currentValue), 
+            selected_value: combinations(currentValue).score, 
             selected_dice: [...state.selected_dice, action.value], 
             selection_array: [...state.selection_array, 
                               state.rolled_dice[action.value - 1]]
                             }}
         else 
         currentValue = []
-        console.log(currentValue)
           return {
             ...state, 
             selected_dice: [], 
