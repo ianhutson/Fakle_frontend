@@ -66,6 +66,18 @@ code {
   margin-top: .1%;
 }
 
+.turn_container{
+  background-image: linear-gradient(lightgreen, green);
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+  border-radius: 25px;
+}
+
 .footer__links a:link{
   color:blue;
   text-decoration:double;
@@ -368,11 +380,13 @@ input{
   width: 100%;
   display: flex;
   justify-content: center;
+ 
 }
 
 .board_container{
+  height: fit-content;
   padding: 15px;
-  height: 950px;
+  height: 1000px;
   width: 650px;
   background-color: green;
   text-align: center;

@@ -11,8 +11,10 @@ class Game extends Component{
     return (
         <div className="game_container">
             <div className="board_container">  
+            <div className="turn_container">
             <h4 style={{color: this.props.store.players[this.props.store.current_player - 1].color}}> {this.props.store.players[this.props.store.current_player - 1].name}'s Turn!</h4>
-            <h6 className="turn">TURN {this.props.store.current_turn} </h6>
+            <h6 className="turn" style={{color:'black'}}>TURN {this.props.store.current_turn} </h6>
+            </div>
             <br></br><br></br>
             <RollBoard store={this.props.store}/>
             <br></br>
