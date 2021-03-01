@@ -8,13 +8,13 @@ render (){
         
         <div className="rolling_board">
         <div >
-            <img className="board_title" alt="title" src={process.env.PUBLIC_URL + "/roll_board.png"}/>
+            <img className="board_title" alt="title" src={process.env.PUBLIC_URL + "roll_board.png"}/>
         </div>
         <div className="line"></div>
         <div className="diceContainer">
         {this.props.store.rollThrown === true && <RollableDice store={this.props.store}/>} </div>
         <div><div className="line"></div>
-            <img className="board_title" alt="title" src={process.env.PUBLIC_URL + "/selected_value.png"}/>
+            <img className="board_title" alt="title" src={process.env.PUBLIC_URL + "selected_value.png"}/>
             </div>
                 
         <div className="select_value_container">
