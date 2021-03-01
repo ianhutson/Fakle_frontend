@@ -11,7 +11,7 @@ function createGame(name){
             winner: name,
         })
     }
-    fetch('https://fakle-backend.herokuapp.com/games', configObj)
+    fetch('http://fakle-backend.herokuapp.com/games', configObj)
         .then(res => {
             console.log(res)
             res.json()})
