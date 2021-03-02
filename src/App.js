@@ -3,9 +3,7 @@ import Home from './components/Home'
 import About from './components/ui/routes/About'
 import Rules from './components/ui/routes/Rules'
 import Leaderboard from './components/ui/routes/Leaderboard'
-import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, useHistory} from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 class App extends Component{
   constructor(props) {
@@ -16,27 +14,16 @@ class App extends Component{
   return (
     <div className='App'>
     <Router >
-    <Route render={({location}) => (
-      <TransitionGroup>
-        <CSSTransition
-          key={location.key}
-          timeout={3000}
-          classNames='fade'
-         >
-        <Switch location={location}>
-          <Route exact path="/about" component={About} history={useHistory}/>
-          <Route exact path="/rules" component={Rules} history={useHistory}/>
-          <Route exact path="/leaderboard" component={Leaderboard} history={useHistory}/>
-          <Route exact path='/' component={Home}/>
+        <Switch>
+          <Route path="/about"><About/></Route>
+          <Route path="/rules"><Rules/></Route>
+          <Route path="/leaderboard"><Leaderboard/></Route>
+          <Route path='/'><Home/></Route>
         </Switch>
-        </CSSTransition>
-        </TransitionGroup>
-    )}/>
     </Router>
-    </div>
-   );
-  }
+    </div>)
+    }
 }
 
 
-export default connect() (App);
+export default App;

@@ -1,6 +1,8 @@
 import {gameConstructor} from './gameConstructor'
 
 function createGame(name){
+    const localURL ='http://localhost:3001/games'
+    const herokuURL = 'https://fakle-backend.herokuapp.com/games'
     const configObj = {
         method: "POST",
         headers: {
@@ -11,7 +13,7 @@ function createGame(name){
             winner: name,
         })
     }
-    fetch('http://localhost:3001/games', configObj)
+    fetch(herokuURL, configObj)
         .then(res => {
             console.log(res)
             res.json()})
