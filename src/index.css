@@ -384,7 +384,6 @@ input{
 }
 
 .board_container{
-  height: fit-content;
   padding: 15px;
   height: 1000px;
   width: 650px;
@@ -644,4 +643,36 @@ table, th, td {
   cursor: default;
   display: block;
   padding: 8px 10px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .nav_buttons{
+    font-size: 10px;
+  }
+
+    h1 {
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 14px;
+    }
+
+    h5 {
+      font-size: 8px;
+    }
+
+    .footer{
+      font-size: 10px;
+    }
+
+    .pregame_container{
+      width: fit-content;
+    }
+
+    .board_title{
+      width: 20%;
+    }
 }
