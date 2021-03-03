@@ -776,7 +776,7 @@ table, th, td {
     }
 
     .dice_background_active {
-      background: linear-gradient(#5F8EC9,#2255BE) 0 0 / 30px 30px no-repeat;
+      background: linear-gradient(#5F8EC9,#2255BE) 0 0 / 50px 50px no-repeat;
     }
     
     .dice_background {
