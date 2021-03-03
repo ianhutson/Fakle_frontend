@@ -705,6 +705,12 @@ table, th, td {
       font-size: 14px;
     }
 
+    h4{
+      font-size: 12px;
+    }
+    h6{
+      font-size: 12px;
+    }
     .rules {
       font-size: 8px;
     }
@@ -744,11 +750,11 @@ table, th, td {
     }
     .board_container{
       width: 425px;
-      height: 1350px;
+      height: 1010px;
     }
 
     .score_container{
-      margin-left: 3%;
+      margin-left: 5%;
       margin-top: 10%;
     }
 
@@ -762,6 +768,7 @@ table, th, td {
     }
     .player_keep{
       width: 300px;
+      height: 260px;
     }
     .rolling_board{
       width: 300px;
@@ -774,7 +781,9 @@ table, th, td {
       padding: 4px 4px 4px 4px;
       margin-top: 100%;
     }
-
+    .keep_container{
+      height: 120px;
+    }
     .dice_background_active {
       background: linear-gradient(#5F8EC9,#2255BE) 0 0 / 50px 50px no-repeat;
     }
