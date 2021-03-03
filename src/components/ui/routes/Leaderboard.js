@@ -24,8 +24,9 @@ class Leaderboard extends Component {
         <div>
             <Header/>
         <div className="leaderboard_container" >
-            <div classname="leaderboard_title"><h1>Leaderboard</h1></div>
-            {this.handleLoading()}
+            <div classname="leaderboard_title"><h3>Leaderboard</h3></div>
+            <div className="leader">
+            {this.handleLoading()}</div>
         <br></br>
             <HomeButton/>
         </div>

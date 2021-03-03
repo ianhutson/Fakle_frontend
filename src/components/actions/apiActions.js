@@ -3,7 +3,7 @@ export const fetchScores = () => {
   const herokuURL = 'http://fakle-backend.herokuapp.com/games'
     return (dispatch) => {
       dispatch({ type: 'LOADING'})
-      fetch(herokuURL).then(response => {
+      fetch(localURL).then(response => {
         return response.json()
         // return response.json()
       }).then(responseJSON => {
