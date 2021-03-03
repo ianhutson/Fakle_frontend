@@ -727,10 +727,10 @@ table, th, td {
     }
 
     .header{
-      height: 100px;
+      height: 10px;
     }
 
     .footer{
-      height: 100px;
+      height: 10px;
     }
 }
