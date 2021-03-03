@@ -13,7 +13,7 @@ function createGame(name){
             winner: name,
         })
     }
-    fetch(localURL, configObj)
+    fetch(herokuURL, configObj)
         .then(res => {
             console.log(res)
             res.json()})

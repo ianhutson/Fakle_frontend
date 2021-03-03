@@ -50,7 +50,6 @@ code {
   font-size: 16px;
   background-color: #9A0000;
   color: white;
-
 }
 
 .footer__links {
@@ -100,7 +99,7 @@ code {
   position: relative; 
   background-color: #9A0000;
   color: #fff;
-  height:70px;
+  height:75px;
   display: inline-block;
   margin: auto;
 }
