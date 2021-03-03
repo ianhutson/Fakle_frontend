@@ -475,8 +475,6 @@ text-align: left;
   cursor: pointer; 
 }
 
-
-
 .game_buttons {
   font-size: 20px;
   text-decoration: none;
@@ -644,15 +642,54 @@ table, th, td {
   display: block;
   padding: 8px 10px;
 }
-.leaderboard_title{
-  font-size: 50px;
-  text-decoration: underline;
+
+.home_leaderboard{
+  width: 100px
 }
 
+.home_leaderboard:hover {
+  cursor: pointer;
+  background-color: black; 
+}
+
+.home_leaderboard:active {
+  cursor: pointer; 
+}
+
+.home_leaderboard {
+  font-size: 20px;
+  text-decoration: none;
+  font-family: lemon;
+  color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-color: gold;
+  background-color:#9A0000;
+  margin-top:2%;
+  margin-left: 1%;
+  margin-right:  1%;
+  width: 100px;
+  padding:5px;
+}
+
+.leaderboard_container{
+  width: 400px;
+  height: 100px;
+  color:black;
+  background: #E6E3D4;
+  margin: auto;
+  margin-top: 2%;
+  padding: 20px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #9A0000;
+  border-radius: 25px;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .nav_buttons{
     font-size: 6px;
+    padding: 1px;
   }
 
     h1 {
@@ -663,7 +700,7 @@ table, th, td {
       font-size: 14px;
     }
 
-    h5 {
+    .rules {
       font-size: 8px;
     }
 
@@ -686,8 +723,4 @@ table, th, td {
       width: 50%;
     }
 
-    .leaderboard_title{
-      font-size: 20px;
-
-    }
 }
