@@ -2,7 +2,7 @@ import {gameConstructor} from './gameConstructor'
 
 function createGame(name){
     const localURL ='http://localhost:3001/games'
-    const herokuURL = 'http://fakle-backend.herokuapp.com/games'
+    const herokuURL = 'https://fakle-backend.herokuapp.com/games'
     const configObj = {
         method: "POST",
         headers: {
