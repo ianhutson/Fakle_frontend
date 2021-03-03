@@ -705,7 +705,7 @@ table, th, td {
     }
 
     .footer{
-      font-size: 6px;
+      font-size: 8px;
     }
 
     .pregame_container{
@@ -727,10 +727,10 @@ table, th, td {
     }
 
     .header{
-      height: 10px;
+      height: 30px;
     }
 
     .footer{
-      height: 10px;
+      height: 20px;
     }
 }
