@@ -722,5 +722,15 @@ table, th, td {
     .submit_button {
       width: 50%;
     }
+    .leaderboard_container{
+      width: 300px;
+    }
 
+    .header{
+      height: 100px;
+    }
+
+    .footer{
+      height: 100px;
+    }
 }
