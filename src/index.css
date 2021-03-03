@@ -644,12 +644,15 @@ table, th, td {
   display: block;
   padding: 8px 10px;
 }
-
+.leaderboard_title{
+  font-size: 50px;
+  text-decoration: underline;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .nav_buttons{
-    font-size: 10px;
+    font-size: 6px;
   }
 
     h1 {
@@ -665,7 +668,7 @@ table, th, td {
     }
 
     .footer{
-      font-size: 10px;
+      font-size: 6px;
     }
 
     .pregame_container{
@@ -674,5 +677,17 @@ table, th, td {
 
     .board_title{
       width: 20%;
+    }
+    .num_players_button {
+      width: 25%;
+    }
+
+    .submit_button {
+      width: 50%;
+    }
+
+    .leaderboard_title{
+      font-size: 20px;
+
     }
 }

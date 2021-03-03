@@ -24,7 +24,7 @@ class Leaderboard extends Component {
         <div>
             <Header/>
         <div className="pregame_container" style={{height: 'fit-content', width: 'fit-content'}}>
-            <h1 style={{fontSize: '50px', textDecoration: 'underline'}}>Leaderboard</h1>
+            <div classname="leaderboard_title">Leaderboard</div>
             {this.handleLoading()}
         <br></br>
             <HomeButton style={{}}/>
