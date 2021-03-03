@@ -5,7 +5,6 @@ export const fetchScores = () => {
       dispatch({ type: 'LOADING'})
       fetch(herokuURL).then(response => {
         return response.json()
-        // return response.json()
       }).then(responseJSON => {
         dispatch({ type: 'POSTING', scores: responseJSON })
       })
