@@ -3,7 +3,7 @@ import Home from './components/Home'
 import About from './components/ui/routes/About'
 import Rules from './components/ui/routes/Rules'
 import Leaderboard from './components/ui/routes/Leaderboard'
-import { BrowserRouter as Router, Route, Switch, useHistory} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 class App extends Component{
   constructor(props) {
