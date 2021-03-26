@@ -14,7 +14,6 @@ class Home extends Component{
             {this.props.isSubmitted === false && <Pregame submit={this.props.submit}/>}
             {this.props.isSubmitted && this.props.over === false && <Game store={this.props}/>}
             {this.props.over === true && <Postgame store={this.props}/>}
-
             <Footer /> 
         </div>
         )
@@ -52,4 +51,5 @@ const mapDispatchToProps = dispatch => ({
     edit_confirm: value => dispatch({type: 'EDIT_CONFIRM', value}),
     color: value => dispatch({type: 'COLOR', value})
   })
+  
 export default connect(mapStateToProps, mapDispatchToProps) (Home)

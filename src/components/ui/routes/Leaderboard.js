@@ -9,7 +9,9 @@ import { fetchScores } from '../../actions/apiActions'
 class Leaderboard extends Component {
 
     componentDidMount() {
-        this.props.fetchScores()
+      console.log('a')
+        this.props.fetchScoresWithDispatch()
+        console.log('b')
       }
        
     handleLoading = () => {
@@ -35,12 +37,17 @@ class Leaderboard extends Component {
     )
 }
 }
-const mapDispatchToProps = state => {
+const mapStateToProps = state => {
     return {
       scores: state.scores,
       loading: state.loading
     }
   }
-   
+
+const mapDispatchToProps = dispatchFN => {
+    return {
+      fetchScoresWithDispatch: () => dispatchFN(fetchScores())
+    }
+  }
   
-  export default connect(mapDispatchToProps, {fetchScores})(Leaderboard)
+  export default connect(mapStateToProps, mapDispatchToProps)(Leaderboard)

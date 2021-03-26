@@ -1,4 +1,6 @@
 import React from 'react';
+import Counter from './Counter'
+import Input from './Input'
 
 class ScoreList extends React.Component {
   
@@ -10,14 +12,19 @@ class ScoreList extends React.Component {
     }, {} );
     var sorted = Object.keys(reduced).sort( function(a,b) {  
     return reduced[b] - reduced[a];
-});
-console.log(sorted)
+    });
   const html = []
   sorted.forEach(winner => {
   if (sorted.includes(winner) === false) sorted.push(winner) 
   });
   sorted.forEach(winner => {
-    html.push(<h1>{winner} - {winnersArr.filter(x => x === winner).length}</h1>)
+    html.push(
+      <>
+ 
+      <h1>{winner} - {winnersArr.filter(x => x === winner).length}</h1>
+    <Counter/>
+    </>)
+  
   })
   return html
   }
@@ -25,6 +32,7 @@ console.log(sorted)
   render() {
     return (
       <div>
+             <Input/>
         {this.scoreList()}
       </div>
     )
