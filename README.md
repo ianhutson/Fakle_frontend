@@ -77,4 +77,4 @@ The app is available as open source under the terms of the MIT License.
 
 # CODE OF CONDUCT
 
-Everyone interacting in the Rafflemania on Rails project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+Everyone interacting in the Fakle on Rails project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
