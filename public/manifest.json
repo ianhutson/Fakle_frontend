@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "Fakle",
   "name": "Create React App Sample",
   "icons": [
     {
@@ -8,9 +8,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "fakle_logo.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "543x176"
     },
     {
       "src": "logo512.png",
